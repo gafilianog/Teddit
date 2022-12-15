@@ -16,6 +16,8 @@
 		055F639E294ADDB0003EE547 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 055F639C294ADDB0003EE547 /* LaunchScreen.storyboard */; };
 		055F63A6294AEA06003EE547 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 055F63A5294AEA06003EE547 /* RegisterViewController.swift */; };
 		055F63A8294AECE6003EE547 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 055F63A7294AECE6003EE547 /* HomeViewController.swift */; };
+		05D93443294AF6AF00C94EFA /* Entities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05D93442294AF6AF00C94EFA /* Entities.swift */; };
+		05D93445294AF81C00C94EFA /* Repositories.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05D93444294AF81C00C94EFA /* Repositories.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +32,8 @@
 		055F639F294ADDB0003EE547 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		055F63A5294AEA06003EE547 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		055F63A7294AECE6003EE547 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		05D93442294AF6AF00C94EFA /* Entities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Entities.swift; sourceTree = "<group>"; };
+		05D93444294AF81C00C94EFA /* Repositories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repositories.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +76,8 @@
 				055F639C294ADDB0003EE547 /* LaunchScreen.storyboard */,
 				055F639F294ADDB0003EE547 /* Info.plist */,
 				055F6397294ADDAF003EE547 /* Teddit.xcdatamodeld */,
+				05D93442294AF6AF00C94EFA /* Entities.swift */,
+				05D93444294AF81C00C94EFA /* Repositories.swift */,
 			);
 			path = Teddit;
 			sourceTree = "<group>";
@@ -151,7 +157,9 @@
 				055F63A6294AEA06003EE547 /* RegisterViewController.swift in Sources */,
 				055F6399294ADDAF003EE547 /* Teddit.xcdatamodeld in Sources */,
 				055F638F294ADDAF003EE547 /* AppDelegate.swift in Sources */,
+				05D93445294AF81C00C94EFA /* Repositories.swift in Sources */,
 				055F6391294ADDAF003EE547 /* SceneDelegate.swift in Sources */,
+				05D93443294AF6AF00C94EFA /* Entities.swift in Sources */,
 				055F63A8294AECE6003EE547 /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
