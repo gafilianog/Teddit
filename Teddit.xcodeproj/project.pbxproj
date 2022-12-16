@@ -17,6 +17,8 @@
 		055F63A6294AEA06003EE547 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 055F63A5294AEA06003EE547 /* RegisterViewController.swift */; };
 		055F63A8294AECE6003EE547 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 055F63A7294AECE6003EE547 /* HomeViewController.swift */; };
 		05ABB21E294C1BCE00B26886 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 05ABB21D294C1BCE00B26886 /* .gitignore */; };
+		05C145A8294C20F00063EE45 /* Repositories.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C145A6294C20F00063EE45 /* Repositories.swift */; };
+		05C145AC294C21CF0063EE45 /* Entities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C145AB294C21CF0063EE45 /* Entities.swift */; };
 		05D7F0FA294B006900EE68EB /* UIImageView+CircularImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05D7F0F9294B006900EE68EB /* UIImageView+CircularImage.swift */; };
 		05D7F0FC294B011700EE68EB /* PostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05D7F0FB294B011700EE68EB /* PostViewController.swift */; };
 		05D93443294AF6AF00C94EFA /* (null) in Sources */ = {isa = PBXBuildFile; };
@@ -36,6 +38,8 @@
 		055F63A5294AEA06003EE547 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		055F63A7294AECE6003EE547 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		05ABB21D294C1BCE00B26886 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		05C145A6294C20F00063EE45 /* Repositories.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Repositories.swift; sourceTree = "<group>"; };
+		05C145AB294C21CF0063EE45 /* Entities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Entities.swift; sourceTree = "<group>"; };
 		05D7F0F9294B006900EE68EB /* UIImageView+CircularImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+CircularImage.swift"; sourceTree = "<group>"; };
 		05D7F0FB294B011700EE68EB /* PostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -79,10 +83,12 @@
 				05D7F0FB294B011700EE68EB /* PostViewController.swift */,
 				055F63A7294AECE6003EE547 /* HomeViewController.swift */,
 				055F63A5294AEA06003EE547 /* RegisterViewController.swift */,
+				05C145A6294C20F00063EE45 /* Repositories.swift */,
 				055F639A294ADDB0003EE547 /* Assets.xcassets */,
 				055F639C294ADDB0003EE547 /* LaunchScreen.storyboard */,
 				055F639F294ADDB0003EE547 /* Info.plist */,
 				055F6397294ADDAF003EE547 /* Teddit.xcdatamodeld */,
+				05C145AB294C21CF0063EE45 /* Entities.swift */,
 			);
 			path = Teddit;
 			sourceTree = "<group>";
@@ -172,6 +178,8 @@
 				055F63A6294AEA06003EE547 /* RegisterViewController.swift in Sources */,
 				055F6399294ADDAF003EE547 /* Teddit.xcdatamodeld in Sources */,
 				055F638F294ADDAF003EE547 /* AppDelegate.swift in Sources */,
+				05C145A8294C20F00063EE45 /* Repositories.swift in Sources */,
+				05C145AC294C21CF0063EE45 /* Entities.swift in Sources */,
 				05D93445294AF81C00C94EFA /* (null) in Sources */,
 				055F6391294ADDAF003EE547 /* SceneDelegate.swift in Sources */,
 				05D7F0FA294B006900EE68EB /* UIImageView+CircularImage.swift in Sources */,
