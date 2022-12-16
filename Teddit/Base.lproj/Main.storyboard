@@ -39,7 +39,7 @@
                                 <rect key="frame" x="20" y="437" width="353" height="34"/>
                                 <color key="backgroundColor" red="0.8862745098" green="0.8862745098" blue="0.8862745098" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZyP-9E-H0D">
                                 <rect key="frame" x="20" y="778" width="353" height="40"/>
@@ -223,15 +223,11 @@
                                     <constraint firstAttribute="height" constant="53" id="pGG-c9-2cY"/>
                                 </constraints>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Rd-Pj-1fc">
-                                <rect key="frame" x="159" y="409" width="75" height="35"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="p8V-oJ-71h">
+                                <rect key="frame" x="76" y="362" width="240" height="128"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="Button"/>
-                                <connections>
-                                    <segue destination="oKa-ys-dUP" kind="presentation" modalPresentationStyle="fullScreen" id="N7d-nn-Wss"/>
-                                </connections>
-                            </button>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="8BS-cj-TpV"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -268,7 +264,7 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="t/anime_titties" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KtN-ST-kzu">
-                                <rect key="frame" x="19.999999999999993" y="221" width="108.33333333333331" height="21"/>
+                                <rect key="frame" x="20" y="221" width="353" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -278,6 +274,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="wBX-GJ-vkI" firstAttribute="top" secondItem="fFR-NP-uBR" secondAttribute="top" constant="90" id="Brw-Af-1cp"/>
+                            <constraint firstItem="fFR-NP-uBR" firstAttribute="trailing" secondItem="KtN-ST-kzu" secondAttribute="trailing" constant="20" id="C00-kR-0ch"/>
                             <constraint firstItem="YFr-WG-56h" firstAttribute="top" secondItem="fFR-NP-uBR" secondAttribute="top" id="GHr-bM-XfV"/>
                             <constraint firstItem="wBX-GJ-vkI" firstAttribute="leading" secondItem="fFR-NP-uBR" secondAttribute="leading" constant="20" id="ND1-DY-5rx"/>
                             <constraint firstItem="KtN-ST-kzu" firstAttribute="leading" secondItem="fFR-NP-uBR" secondAttribute="leading" constant="20" id="UTB-qm-PEn"/>
