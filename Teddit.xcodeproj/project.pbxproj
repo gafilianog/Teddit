@@ -16,10 +16,11 @@
 		055F639E294ADDB0003EE547 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 055F639C294ADDB0003EE547 /* LaunchScreen.storyboard */; };
 		055F63A6294AEA06003EE547 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 055F63A5294AEA06003EE547 /* RegisterViewController.swift */; };
 		055F63A8294AECE6003EE547 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 055F63A7294AECE6003EE547 /* HomeViewController.swift */; };
+		05C145A4294C19F70063EE45 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 05C145A3294C19F70063EE45 /* .gitignore */; };
 		05D7F0FA294B006900EE68EB /* UIImageView+CircularImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05D7F0F9294B006900EE68EB /* UIImageView+CircularImage.swift */; };
 		05D7F0FC294B011700EE68EB /* PostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05D7F0FB294B011700EE68EB /* PostViewController.swift */; };
-		05D93443294AF6AF00C94EFA /* Entities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05D93442294AF6AF00C94EFA /* Entities.swift */; };
-		05D93445294AF81C00C94EFA /* Repositories.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05D93444294AF81C00C94EFA /* Repositories.swift */; };
+		05D93443294AF6AF00C94EFA /* (null) in Sources */ = {isa = PBXBuildFile; };
+		05D93445294AF81C00C94EFA /* (null) in Sources */ = {isa = PBXBuildFile; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		055F639F294ADDB0003EE547 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		055F63A5294AEA06003EE547 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		055F63A7294AECE6003EE547 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		05C145A3294C19F70063EE45 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		05D7F0F9294B006900EE68EB /* UIImageView+CircularImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+CircularImage.swift"; sourceTree = "<group>"; };
 		05D7F0FB294B011700EE68EB /* PostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -52,6 +54,7 @@
 		055F6382294ADDAF003EE547 = {
 			isa = PBXGroup;
 			children = (
+				05C145A3294C19F70063EE45 /* .gitignore */,
 				055F638D294ADDAF003EE547 /* Teddit */,
 				055F638C294ADDAF003EE547 /* Products */,
 			);
@@ -80,8 +83,6 @@
 				055F639C294ADDB0003EE547 /* LaunchScreen.storyboard */,
 				055F639F294ADDB0003EE547 /* Info.plist */,
 				055F6397294ADDAF003EE547 /* Teddit.xcdatamodeld */,
-				05D93442294AF6AF00C94EFA /* Entities.swift */,
-				05D93444294AF81C00C94EFA /* Repositories.swift */,
 			);
 			path = Teddit;
 			sourceTree = "<group>";
@@ -152,6 +153,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				05C145A4294C19F70063EE45 /* .gitignore in Resources */,
 				055F639E294ADDB0003EE547 /* LaunchScreen.storyboard in Resources */,
 				055F639B294ADDB0003EE547 /* Assets.xcassets in Resources */,
 				055F6396294ADDAF003EE547 /* Main.storyboard in Resources */,
@@ -170,10 +172,10 @@
 				055F63A6294AEA06003EE547 /* RegisterViewController.swift in Sources */,
 				055F6399294ADDAF003EE547 /* Teddit.xcdatamodeld in Sources */,
 				055F638F294ADDAF003EE547 /* AppDelegate.swift in Sources */,
-				05D93445294AF81C00C94EFA /* Repositories.swift in Sources */,
+				05D93445294AF81C00C94EFA /* (null) in Sources */,
 				055F6391294ADDAF003EE547 /* SceneDelegate.swift in Sources */,
 				05D7F0FA294B006900EE68EB /* UIImageView+CircularImage.swift in Sources */,
-				05D93443294AF6AF00C94EFA /* Entities.swift in Sources */,
+				05D93443294AF6AF00C94EFA /* (null) in Sources */,
 				055F63A8294AECE6003EE547 /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
