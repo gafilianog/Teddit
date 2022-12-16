@@ -75,6 +75,7 @@
 		055F638D294ADDAF003EE547 /* Teddit */ = {
 			isa = PBXGroup;
 			children = (
+				05A01037294C5FBF00106B6C /* Entities */,
 				05C145A6294C20F00063EE45 /* BaseRepository.swift */,
 				05D7F0F8294B002200EE68EB /* Extensions */,
 				055F638E294ADDAF003EE547 /* AppDelegate.swift */,
@@ -91,6 +92,13 @@
 				05C145AD294C22CA0063EE45 /* Repositories.swift */,
 			);
 			path = Teddit;
+			sourceTree = "<group>";
+		};
+		05A01037294C5FBF00106B6C /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Entities;
 			sourceTree = "<group>";
 		};
 		05D7F0F8294B002200EE68EB /* Extensions */ = {
