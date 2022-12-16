@@ -9,7 +9,7 @@
         <attribute name="content" optional="YES" attributeType="String"/>
         <attribute name="title" optional="YES" attributeType="String"/>
         <relationship name="author" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="User"/>
-        <relationship name="comments" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="Comment" inverseName="post" inverseEntity="Comment"/>
+        <relationship name="comments" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Comment" inverseName="post" inverseEntity="Comment"/>
         <relationship name="topic" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="Topic" inverseName="posts" inverseEntity="Topic"/>
     </entity>
     <entity name="Topic" representedClassName="Topic" syncable="YES" codeGenerationType="class">
