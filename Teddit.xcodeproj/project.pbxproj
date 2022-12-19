@@ -9,6 +9,14 @@
 /* Begin PBXBuildFile section */
 		051E8D86294C245D00D4E717 /* CreatePostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 051E8D85294C245D00D4E717 /* CreatePostViewController.swift */; };
 		051E8D88294C535F00D4E717 /* PostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 051E8D87294C535F00D4E717 /* PostTableViewCell.swift */; };
+		0548700D295030D400CEE4F3 /* User+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0548700B295030D400CEE4F3 /* User+CoreDataClass.swift */; };
+		0548700E295030D400CEE4F3 /* User+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0548700C295030D400CEE4F3 /* User+CoreDataProperties.swift */; };
+		054870122950310B00CEE4F3 /* Post+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 054870102950310B00CEE4F3 /* Post+CoreDataClass.swift */; };
+		054870132950310B00CEE4F3 /* Post+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 054870112950310B00CEE4F3 /* Post+CoreDataProperties.swift */; };
+		054870172950312100CEE4F3 /* Topic+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 054870152950312100CEE4F3 /* Topic+CoreDataClass.swift */; };
+		054870182950312100CEE4F3 /* Topic+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 054870162950312100CEE4F3 /* Topic+CoreDataProperties.swift */; };
+		0548701C2950313C00CEE4F3 /* Comment+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0548701A2950313C00CEE4F3 /* Comment+CoreDataClass.swift */; };
+		0548701D2950313C00CEE4F3 /* Comment+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0548701B2950313C00CEE4F3 /* Comment+CoreDataProperties.swift */; };
 		055F638F294ADDAF003EE547 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 055F638E294ADDAF003EE547 /* AppDelegate.swift */; };
 		055F6391294ADDAF003EE547 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 055F6390294ADDAF003EE547 /* SceneDelegate.swift */; };
 		055F6393294ADDAF003EE547 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 055F6392294ADDAF003EE547 /* LoginViewController.swift */; };
@@ -30,6 +38,14 @@
 /* Begin PBXFileReference section */
 		051E8D85294C245D00D4E717 /* CreatePostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePostViewController.swift; sourceTree = "<group>"; };
 		051E8D87294C535F00D4E717 /* PostTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostTableViewCell.swift; sourceTree = "<group>"; };
+		0548700B295030D400CEE4F3 /* User+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+CoreDataClass.swift"; sourceTree = "<group>"; };
+		0548700C295030D400CEE4F3 /* User+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		054870102950310B00CEE4F3 /* Post+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Post+CoreDataClass.swift"; path = "Teddit/Post+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
+		054870112950310B00CEE4F3 /* Post+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Post+CoreDataProperties.swift"; path = "Teddit/Post+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
+		054870152950312100CEE4F3 /* Topic+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Topic+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
+		054870162950312100CEE4F3 /* Topic+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Topic+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
+		0548701A2950313C00CEE4F3 /* Comment+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Comment+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
+		0548701B2950313C00CEE4F3 /* Comment+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Comment+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
 		055F638B294ADDAF003EE547 /* Teddit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Teddit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		055F638E294ADDAF003EE547 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		055F6390294ADDAF003EE547 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -59,6 +75,53 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		054870092950309F00CEE4F3 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				054870192950312A00CEE4F3 /* Comment */,
+				054870142950311200CEE4F3 /* Topic */,
+				0548700F295030F000CEE4F3 /* Post */,
+				0548700A295030AC00CEE4F3 /* User */,
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
+		0548700A295030AC00CEE4F3 /* User */ = {
+			isa = PBXGroup;
+			children = (
+				0548700B295030D400CEE4F3 /* User+CoreDataClass.swift */,
+				0548700C295030D400CEE4F3 /* User+CoreDataProperties.swift */,
+			);
+			path = User;
+			sourceTree = "<group>";
+		};
+		0548700F295030F000CEE4F3 /* Post */ = {
+			isa = PBXGroup;
+			children = (
+				054870102950310B00CEE4F3 /* Post+CoreDataClass.swift */,
+				054870112950310B00CEE4F3 /* Post+CoreDataProperties.swift */,
+			);
+			path = Post;
+			sourceTree = "<group>";
+		};
+		054870142950311200CEE4F3 /* Topic */ = {
+			isa = PBXGroup;
+			children = (
+				054870152950312100CEE4F3 /* Topic+CoreDataClass.swift */,
+				054870162950312100CEE4F3 /* Topic+CoreDataProperties.swift */,
+			);
+			path = Topic;
+			sourceTree = "<group>";
+		};
+		054870192950312A00CEE4F3 /* Comment */ = {
+			isa = PBXGroup;
+			children = (
+				0548701A2950313C00CEE4F3 /* Comment+CoreDataClass.swift */,
+				0548701B2950313C00CEE4F3 /* Comment+CoreDataProperties.swift */,
+			);
+			path = Comment;
+			sourceTree = "<group>";
+		};
 		055F6382294ADDAF003EE547 = {
 			isa = PBXGroup;
 			children = (
@@ -79,9 +142,9 @@
 		055F638D294ADDAF003EE547 /* Teddit */ = {
 			isa = PBXGroup;
 			children = (
-				05A01037294C5FBF00106B6C /* Entities */,
-				05C145A6294C20F00063EE45 /* BaseRepository.swift */,
 				05D7F0F8294B002200EE68EB /* Extensions */,
+				054870092950309F00CEE4F3 /* Entities */,
+				05C145A6294C20F00063EE45 /* BaseRepository.swift */,
 				055F638E294ADDAF003EE547 /* AppDelegate.swift */,
 				055F6390294ADDAF003EE547 /* SceneDelegate.swift */,
 				055F6392294ADDAF003EE547 /* LoginViewController.swift */,
@@ -98,13 +161,6 @@
 				05C145AD294C22CA0063EE45 /* Repositories.swift */,
 			);
 			path = Teddit;
-			sourceTree = "<group>";
-		};
-		05A01037294C5FBF00106B6C /* Entities */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Entities;
 			sourceTree = "<group>";
 		};
 		05D7F0F8294B002200EE68EB /* Extensions */ = {
@@ -189,18 +245,26 @@
 			files = (
 				05D7F0FC294B011700EE68EB /* PostViewController.swift in Sources */,
 				055F6393294ADDAF003EE547 /* LoginViewController.swift in Sources */,
+				0548700E295030D400CEE4F3 /* User+CoreDataProperties.swift in Sources */,
 				055F63A6294AEA06003EE547 /* RegisterViewController.swift in Sources */,
 				055F6399294ADDAF003EE547 /* Teddit.xcdatamodeld in Sources */,
 				055F638F294ADDAF003EE547 /* AppDelegate.swift in Sources */,
+				054870122950310B00CEE4F3 /* Post+CoreDataClass.swift in Sources */,
 				05C145A8294C20F00063EE45 /* BaseRepository.swift in Sources */,
+				054870172950312100CEE4F3 /* Topic+CoreDataClass.swift in Sources */,
 				05D93445294AF81C00C94EFA /* (null) in Sources */,
 				055F6391294ADDAF003EE547 /* SceneDelegate.swift in Sources */,
 				05C145AE294C22CA0063EE45 /* Repositories.swift in Sources */,
+				0548701C2950313C00CEE4F3 /* Comment+CoreDataClass.swift in Sources */,
+				054870132950310B00CEE4F3 /* Post+CoreDataProperties.swift in Sources */,
 				05D7F0FA294B006900EE68EB /* UIImageView+CircularImage.swift in Sources */,
 				05D93443294AF6AF00C94EFA /* (null) in Sources */,
+				0548701D2950313C00CEE4F3 /* Comment+CoreDataProperties.swift in Sources */,
 				051E8D88294C535F00D4E717 /* PostTableViewCell.swift in Sources */,
 				051E8D86294C245D00D4E717 /* CreatePostViewController.swift in Sources */,
 				055F63A8294AECE6003EE547 /* HomeViewController.swift in Sources */,
+				0548700D295030D400CEE4F3 /* User+CoreDataClass.swift in Sources */,
+				054870182950312100CEE4F3 /* Topic+CoreDataProperties.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
