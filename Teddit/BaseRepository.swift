@@ -1,5 +1,5 @@
 //
-//  Repositories.swift
+//  BaseRepositories.swift
 //  Teddit
 //
 //  Created by prk on 12/14/22.
@@ -12,33 +12,36 @@ import UIKit
 class BaseRepository<T : NSManagedObject> {
     
     var entityName: String
-    private let ctx: NSManagedObjectContext
+    let context: NSManagedObjectContext
     
     init(entityName: String) {
         self.entityName = entityName
         
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        self.ctx = appDelegate.persistentContainer.viewContext
+        self.context = appDelegate.persistentContainer.viewContext
     }
     
+    /*
+     Creates an entity object with the `entityName` and `context` pre-filled.
+     */
     func create() -> T {
-        let entityDesc = NSEntityDescription.entity(forEntityName: entityName, in: ctx)!
-        return T(entity: entityDesc, insertInto: ctx)
+        let entityDesc = NSEntityDescription.entity(forEntityName: entityName, in: context)!
+        return T(entity: entityDesc, insertInto: context)
     }
     
+    /**
+     Saves the entity to the database.
+     */
     func save(entity: T) throws {
-        let nsEntity = NSEntityDescription.entity(forEntityName: entityName, in: ctx)!
-        let nsObject = NSManagedObject(entity: nsEntity, insertInto: ctx)
-        
-        Mirror(reflecting: entity).children.forEach { child in nsObject.setValue(child.value, forKey: child.label!)
-        }
-        
-        try ctx.save()
+        try entity.managedObjectContext!.save()
     }
     
+    /**
+     Fetches all entities from the database.
+     */
     func getAll() throws -> [T] {
         let req = T.fetchRequest()
-        return try ctx.fetch(req) as! [T]
+        return try context.fetch(req) as! [T]
     }
     
 }
