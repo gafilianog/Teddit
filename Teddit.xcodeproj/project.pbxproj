@@ -34,6 +34,7 @@
 		05D7F0FC294B011700EE68EB /* PostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05D7F0FB294B011700EE68EB /* PostViewController.swift */; };
 		05D93443294AF6AF00C94EFA /* (null) in Sources */ = {isa = PBXBuildFile; };
 		05D93445294AF81C00C94EFA /* (null) in Sources */ = {isa = PBXBuildFile; };
+		05E21CF82952D3910046A7B3 /* ValidationError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05E21CF62952D1F80046A7B3 /* ValidationError.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -64,6 +65,7 @@
 		05C145A6294C20F00063EE45 /* BaseRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseRepository.swift; sourceTree = "<group>"; };
 		05D7F0F9294B006900EE68EB /* UIImageView+CircularImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+CircularImage.swift"; sourceTree = "<group>"; };
 		05D7F0FB294B011700EE68EB /* PostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostViewController.swift; sourceTree = "<group>"; };
+		05E21CF62952D1F80046A7B3 /* ValidationError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationError.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -169,6 +171,7 @@
 				055F639C294ADDB0003EE547 /* LaunchScreen.storyboard */,
 				055F639F294ADDB0003EE547 /* Info.plist */,
 				055F6397294ADDAF003EE547 /* Teddit.xcdatamodeld */,
+				05E21CF62952D1F80046A7B3 /* ValidationError.swift */,
 			);
 			path = Teddit;
 			sourceTree = "<group>";
@@ -259,6 +262,7 @@
 				055F6393294ADDAF003EE547 /* LoginViewController.swift in Sources */,
 				0548700E295030D400CEE4F3 /* User+CoreDataProperties.swift in Sources */,
 				055F63A6294AEA06003EE547 /* RegisterViewController.swift in Sources */,
+				05E21CF82952D3910046A7B3 /* ValidationError.swift in Sources */,
 				055F6399294ADDAF003EE547 /* Teddit.xcdatamodeld in Sources */,
 				055F638F294ADDAF003EE547 /* AppDelegate.swift in Sources */,
 				054870122950310B00CEE4F3 /* Post+CoreDataClass.swift in Sources */,

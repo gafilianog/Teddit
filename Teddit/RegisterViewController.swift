@@ -22,66 +22,62 @@ class RegisterViewController: UIViewController {
     }
     
     @IBAction func registerPressed(_ sender: Any) {
-        let username = self.validateUsername()
-        if username == nil {
+        let username, email, password: String
+        
+        do {
+            username = try self.validateUsername()
+            email = try self.validateEmail()
+            password = try self.validatePassword()
+        } catch let error as ValidationError {
+            self.showAlert(title: "Validation Error", message: error.message)
             return
+        } catch {
         }
         
-        let email = self.validateEmail()
-        if email == nil {
-            return
-        }
-        
-        let password = self.validatePassword()
-        if password == nil {
-            return
-        }
+        print("hello world")
     }
     
-    func validateUsername() -> String? {
+    func validateUsername() throws -> String {
         let username = usernameField.text!
-        let alertTitle = "Validation Error"
-        
         if username.isEmpty {
-            self.showAlert(title: alertTitle, message: "Username cannot be empty.")
-            return nil
+            throw ValidationError("Username cannot be empty.")
         }
-        if username.matches(of: /^.{3,20}$/).isEmpty {
-            self.showAlert(title: alertTitle, message: "Username must be more than 3 characters and less than 20 characters.")
-            return nil
+        
+        if username.count < 3 || username.count > 20 {
+            throw ValidationError("Username must be more than 3 characters and less than 20 characters.")
         }
-        if (username.firstMatch(of: /[ +\-`~!@#$%^&*()\\\/=?><,.]/) != nil) {
-            self.showAlert(title: alertTitle, message: "Username must not contain special characters.")
-            return nil
+
+        for char in username {
+            if char == "_" {
+                continue
+            }
+            
+            if !char.isLetter && !char.isNumber {
+                throw ValidationError("Username must not contain special characters.")
+            }
         }
         
         do {
             let entity = try userRepo!.findByUsername(username: username)
             if entity != nil {
-                self.showAlert(title: alertTitle, message: "Username is already taken.")
-                return nil
+                throw ValidationError("Username is already taken.")
             }
         } catch {
-            self.showAlert(title: alertTitle, message: "Cannot fetch data from Core Data")
-            return nil
+            throw ValidationError("Cannot fetch data from Core Data")
         }
         
         return username
     }
     
-    func validateEmail() -> String? {
+    func validateEmail() throws -> String {
         let email = emailField.text!
-        let alertTitle = "Validation Error"
-        
         if email.isEmpty {
-            self.showAlert(title: alertTitle, message: "Email cannot be empty.")
-            return nil
+            throw ValidationError("Email cannot be empty.")
         }
         
         let emailSplit = email.split(separator: "@")
         if emailSplit.count != 2 {
-            self.showAlert(title: alertTitle, message: "Email must contains '@'.")
-            return nil
+            throw ValidationError("Email must contains '@'.")
         }
         
         for char in email {
@@ -89,54 +85,68 @@ class RegisterViewController: UIViewController {
                 continue
             }
             if char.isUppercase {
-                self.showAlert(title: alertTitle, message: "Email cannot have any uppercase.")
-                return nil
+                throw ValidationError("Email cannot have any uppercase.")
             }
             if !char.isLetter && !char.isNumber {
-                self.showAlert(title: alertTitle, message: "Email cannot have any special characters.")
-                return nil
+                throw ValidationError("Email cannot have any special characters.")
             }
         }
         
         let domain = emailSplit[1]
         if !domain.contains(".") {
-            self.showAlert(title: alertTitle, message: "Email must have a valid domain.")
-            return nil
+            throw ValidationError("Email must have a valid domain.")
         }
         
         do {
             let entity = try userRepo!.findByEmail(email: email)
             if entity != nil {
-                self.showAlert(title: alertTitle, message: "Email is already taken.")
-                return nil
+                throw ValidationError("Email is already taken.")
             }
         } catch {
-            self.showAlert(title: alertTitle, message: "Cannot fetch data from Core Data")
-            return nil
+            throw ValidationError("Cannot fetch data from Core Data.")
         }
         
         return email
     }
     
-    func validatePassword() -> String? {
+    func validatePassword() throws -> String {
         let password = passwordField.text!
-        let alertTitle = "Validation Error"
         
-        if password.matches(of: /^.{8,16}$/).isEmpty {
-            self.showAlert(title: alertTitle, message: "Password length must be 8 - 16 characters.")
-            return nil
+        if password.count < 8 || password.count > 16 {
+            throw ValidationError("Password length must be 8 - 16 characters.")
         }
-        if password.matches(of: /[a-z]/).isEmpty {
-            self.showAlert(title: alertTitle, message: "Password must have lowercase characters.")
-            return nil
+        
+        var hasLower = false
+        var hasUpper = false
+        var hasSpecial = false
+        var hasNumber = false
+        
+        for char in password {
+            if char.isUppercase {
+                hasUpper = true
+            }
+            if char.isLowercase {
+                hasLower = true
+            }
+            if char.isNumber {
+                hasNumber = true
+            }
+            if (!char.isLetter && !char.isNumber) {
+                hasSpecial = true
+            }
         }
-        if password.matches(of: /[A-Z]/).isEmpty {
-            self.showAlert(title: alertTitle, message: "Password must have uppercase characters.")
-            return nil
+        
+        if !hasLower {
+            throw ValidationError("Password must have lowercase characters.")
         }
-        if password.matches(of: /[+\-`~!@#$%^&*()\\\/=?><,.]/).isEmpty {
-            self.showAlert(title: alertTitle, message: "Password must have special characters.")
-            return nil
+        if !hasUpper {
+            throw ValidationError("Password must have lowercase characters.")
+        }
+        if !hasNumber {
+            throw ValidationError("Password must have lowercase characters.")
+        }
+        if !hasSpecial {
+            throw ValidationError("Password must have special characters.")
         }
         
         return password
