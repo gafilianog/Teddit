@@ -77,8 +77,30 @@ class RegisterViewController: UIViewController {
             self.showAlert(title: alertTitle, message: "Email cannot be empty.")
             return nil
         }
-        if email.matches(of: /^[a-z\\d_.]+@[a-zA-Z-_.]+\.[a-zA-Z]+$/).isEmpty {
-            self.showAlert(title: alertTitle, message: "Email is not valid.")
+        
+        let emailSplit = email.split(separator: "@")
+        if emailSplit.count != 2 {
+            self.showAlert(title: alertTitle, message: "Email must contains '@'.")
+            return nil
+        }
+        
+        for char in email {
+            if char == "@" || char == "." {
+                continue
+            }
+            if char.isUppercase {
+                self.showAlert(title: alertTitle, message: "Email cannot have any uppercase.")
+                return nil
+            }
+            if !char.isLetter && !char.isNumber {
+                self.showAlert(title: alertTitle, message: "Email cannot have any special characters.")
+                return nil
+            }
+        }
+        
+        let domain = emailSplit[1]
+        if !domain.contains(".") {
+            self.showAlert(title: alertTitle, message: "Email must have a valid domain.")
             return nil
         }
         
