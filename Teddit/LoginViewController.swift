@@ -28,32 +28,35 @@ class LoginViewController: UIViewController {
         let username = usernameField.text!
         let password = passwordField.text!
         
-        if username.isEmpty {
-            self.showAlert(title: alertTitle, message: "Username cannot be empty.")
-            return
-        }
-        if password.isEmpty {
-            self.showAlert(title: alertTitle, message: "Password cannot be empty.")
-            return
-        }
-        
-        do {
-            let authAlertTitle = "Authentication Error"
-            if let entity = try userRepo.findByUsername(username: username) {
-                if entity.password != password {
-                    self.showAlert(title: authAlertTitle, message: "Password is incorrect.")
-                    return
-                }
-                
-                // TODO: authentication success
-                self.showAlert(title: "Success", message: "Authentication successful.")
-            } else {
-                self.showAlert(title: authAlertTitle, message: "This username is not registered.")
-                return
-            }
-        } catch {
-            print("Cannot fetch for user entity: \(error)")
-        }
+//        if username.isEmpty {
+//            self.showAlert(title: alertTitle, message: "Username cannot be empty.")
+//            return
+//        }
+//        if password.isEmpty {
+//            self.showAlert(title: alertTitle, message: "Password cannot be empty.")
+//            return
+//        }
+//
+//        do {
+//            let authAlertTitle = "Authentication Error"
+//            if let entity = try userRepo.findByUsername(username: username) {
+//                if entity.password != password {
+//                    self.showAlert(title: authAlertTitle, message: "Password is incorrect.")
+//                    return
+//                }
+//
+//                // TODO: save logged in user data
+//                self.showAlert(title: "Success", message: "Authentication successful.", onOkHandler: {
+//                    self.performSegue(withIdentifier: "loginSuccess", sender: self)
+//                })
+//            } else {
+//                self.showAlert(title: authAlertTitle, message: "This username is not registered.")
+//                return
+//            }
+//        } catch {
+//            print("Cannot fetch for user entity: \(error)")
+//        }
+        performSegue(withIdentifier: "loginSuccess", sender: self)
     }
     
 }

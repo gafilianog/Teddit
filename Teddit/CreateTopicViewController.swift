@@ -7,20 +7,10 @@
 
 import UIKit
 
-class CreatePostViewController: UIViewController, UITextViewDelegate {
-
-    @IBOutlet var tfTitlePost: UITextField!
-    @IBOutlet var tvBodyPost: UITextView!
-    
-    let PLACEHOLDER = "body post"
-    var isFocusTv = false
+class CreateTopicViewController: UIViewController, UITextViewDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        tvBodyPost.delegate = self
-        tvBodyPost.text = PLACEHOLDER
-        tvBodyPost.textColor = .lightGray
     }
     
 //    func textViewDidChange(_ textView: UITextView) {

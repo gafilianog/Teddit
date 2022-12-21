@@ -7,8 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		051E8D86294C245D00D4E717 /* CreatePostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 051E8D85294C245D00D4E717 /* CreatePostViewController.swift */; };
-		051E8D88294C535F00D4E717 /* PostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 051E8D87294C535F00D4E717 /* PostTableViewCell.swift */; };
+		051E8D86294C245D00D4E717 /* CreateTopicViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 051E8D85294C245D00D4E717 /* CreateTopicViewController.swift */; };
 		0548700D295030D400CEE4F3 /* User+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0548700B295030D400CEE4F3 /* User+CoreDataClass.swift */; };
 		0548700E295030D400CEE4F3 /* User+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0548700C295030D400CEE4F3 /* User+CoreDataProperties.swift */; };
 		054870122950310B00CEE4F3 /* Post+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 054870102950310B00CEE4F3 /* Post+CoreDataClass.swift */; };
@@ -29,17 +28,16 @@
 		055F63A6294AEA06003EE547 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 055F63A5294AEA06003EE547 /* RegisterViewController.swift */; };
 		055F63A8294AECE6003EE547 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 055F63A7294AECE6003EE547 /* HomeViewController.swift */; };
 		05ABB21E294C1BCE00B26886 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 05ABB21D294C1BCE00B26886 /* .gitignore */; };
+		05B802AF2952F9C70053533B /* TopicItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B802AE2952F9C70053533B /* TopicItemTableViewCell.swift */; };
 		05C145A8294C20F00063EE45 /* BaseRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C145A6294C20F00063EE45 /* BaseRepository.swift */; };
 		05D7F0FA294B006900EE68EB /* UIImageView+CircularImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05D7F0F9294B006900EE68EB /* UIImageView+CircularImage.swift */; };
-		05D7F0FC294B011700EE68EB /* PostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05D7F0FB294B011700EE68EB /* PostViewController.swift */; };
 		05D93443294AF6AF00C94EFA /* (null) in Sources */ = {isa = PBXBuildFile; };
 		05D93445294AF81C00C94EFA /* (null) in Sources */ = {isa = PBXBuildFile; };
 		05E21CF82952D3910046A7B3 /* ValidationError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05E21CF62952D1F80046A7B3 /* ValidationError.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		051E8D85294C245D00D4E717 /* CreatePostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePostViewController.swift; sourceTree = "<group>"; };
-		051E8D87294C535F00D4E717 /* PostTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostTableViewCell.swift; sourceTree = "<group>"; };
+		051E8D85294C245D00D4E717 /* CreateTopicViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateTopicViewController.swift; sourceTree = "<group>"; };
 		0548700B295030D400CEE4F3 /* User+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+CoreDataClass.swift"; sourceTree = "<group>"; };
 		0548700C295030D400CEE4F3 /* User+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		054870102950310B00CEE4F3 /* Post+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Post+CoreDataClass.swift"; path = "Teddit/Post+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
@@ -62,9 +60,9 @@
 		055F63A5294AEA06003EE547 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		055F63A7294AECE6003EE547 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		05ABB21D294C1BCE00B26886 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		05B802AE2952F9C70053533B /* TopicItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopicItemTableViewCell.swift; sourceTree = "<group>"; };
 		05C145A6294C20F00063EE45 /* BaseRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseRepository.swift; sourceTree = "<group>"; };
 		05D7F0F9294B006900EE68EB /* UIImageView+CircularImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+CircularImage.swift"; sourceTree = "<group>"; };
-		05D7F0FB294B011700EE68EB /* PostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostViewController.swift; sourceTree = "<group>"; };
 		05E21CF62952D1F80046A7B3 /* ValidationError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationError.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -162,9 +160,8 @@
 				055F6390294ADDAF003EE547 /* SceneDelegate.swift */,
 				055F6392294ADDAF003EE547 /* LoginViewController.swift */,
 				055F6394294ADDAF003EE547 /* Main.storyboard */,
-				051E8D85294C245D00D4E717 /* CreatePostViewController.swift */,
-				051E8D87294C535F00D4E717 /* PostTableViewCell.swift */,
-				05D7F0FB294B011700EE68EB /* PostViewController.swift */,
+				05B802AE2952F9C70053533B /* TopicItemTableViewCell.swift */,
+				051E8D85294C245D00D4E717 /* CreateTopicViewController.swift */,
 				055F63A7294AECE6003EE547 /* HomeViewController.swift */,
 				055F63A5294AEA06003EE547 /* RegisterViewController.swift */,
 				055F639A294ADDB0003EE547 /* Assets.xcassets */,
@@ -258,7 +255,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				0548702029503E9400CEE4F3 /* UserRepository.swift in Sources */,
-				05D7F0FC294B011700EE68EB /* PostViewController.swift in Sources */,
 				055F6393294ADDAF003EE547 /* LoginViewController.swift in Sources */,
 				0548700E295030D400CEE4F3 /* User+CoreDataProperties.swift in Sources */,
 				055F63A6294AEA06003EE547 /* RegisterViewController.swift in Sources */,
@@ -274,10 +270,10 @@
 				054870132950310B00CEE4F3 /* Post+CoreDataProperties.swift in Sources */,
 				05D7F0FA294B006900EE68EB /* UIImageView+CircularImage.swift in Sources */,
 				054870222950451E00CEE4F3 /* UIViewController+ShowAlert.swift in Sources */,
+				05B802AF2952F9C70053533B /* TopicItemTableViewCell.swift in Sources */,
 				05D93443294AF6AF00C94EFA /* (null) in Sources */,
 				0548701D2950313C00CEE4F3 /* Comment+CoreDataProperties.swift in Sources */,
-				051E8D88294C535F00D4E717 /* PostTableViewCell.swift in Sources */,
-				051E8D86294C245D00D4E717 /* CreatePostViewController.swift in Sources */,
+				051E8D86294C245D00D4E717 /* CreateTopicViewController.swift in Sources */,
 				055F63A8294AECE6003EE547 /* HomeViewController.swift in Sources */,
 				0548700D295030D400CEE4F3 /* User+CoreDataClass.swift in Sources */,
 				054870182950312100CEE4F3 /* Topic+CoreDataProperties.swift in Sources */,

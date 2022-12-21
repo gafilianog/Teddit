@@ -21,6 +21,11 @@ class RegisterViewController: UIViewController {
         userRepo = UserRepository()
     }
     
+    
+    @IBAction func actToLogin(_ sender: Any) {
+        performSegue(withIdentifier: "toLogin", sender: self)
+    }
+    
     @IBAction func registerPressed(_ sender: Any) {
         let username, email, password: String
         
