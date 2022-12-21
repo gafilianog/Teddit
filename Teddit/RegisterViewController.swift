@@ -13,7 +13,7 @@ class RegisterViewController: UIViewController {
     @IBOutlet var emailField: UITextField!
     @IBOutlet var passwordField: UITextField!
     
-    var userRepo: UserRepository?
+    var userRepo: UserRepository!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,9 +32,19 @@ class RegisterViewController: UIViewController {
             self.showAlert(title: "Validation Error", message: error.message)
             return
         } catch {
+            return
         }
         
-        print("hello world")
+        let entity = userRepo.create()
+        entity.email = email
+        entity.username = username
+        entity.password = password
+        
+        do {
+            try userRepo.save(entity: entity)
+        } catch {
+            print("Failed to register user: \(error)")
+        }
     }
     
     func validateUsername() throws -> String {
