@@ -42,6 +42,7 @@ class RegisterViewController: UIViewController {
         
         do {
             try userRepo.save(entity: entity)
+            self.showAlert(title: "Authentication", message: "User is successfully registered.", onOkHandler: { self.performSegue(withIdentifier: "toLogin", sender: self) })
         } catch {
             print("Failed to register user: \(error)")
         }

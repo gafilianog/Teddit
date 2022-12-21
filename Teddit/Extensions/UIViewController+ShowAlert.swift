@@ -10,10 +10,10 @@ import UIKit
 
 extension UIViewController {
     
-    func showAlert(title: String, message: String) {
+    func showAlert(title: String, message: String, onOkHandler: (() -> Void)? = nil) {
         let alertView = UIAlertController(title: title, message: message, preferredStyle: .alert)
         
-        alertView.addAction(UIAlertAction(title: "OK", style: .default))
+        alertView.addAction(UIAlertAction(title: "OK", style: .default, handler: { _ in onOkHandler?() }))
         
         self.present(alertView, animated: true)
     }
