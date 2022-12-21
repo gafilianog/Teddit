@@ -53,6 +53,7 @@
                                     <color key="baseBackgroundColor" red="1" green="0.27058823529999998" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </buttonConfiguration>
                                 <connections>
+                                    <action selector="loginPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="xSl-90-2yx"/>
                                     <segue destination="NFF-mh-h59" kind="presentation" modalPresentationStyle="fullScreen" id="xU9-fP-7wj"/>
                                 </connections>
                             </button>
@@ -98,6 +99,10 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="LXv-kE-ivx"/>
+                    <connections>
+                        <outlet property="passwordField" destination="PIi-Ut-4zE" id="4FO-7T-jMQ"/>
+                        <outlet property="usernameField" destination="obF-4U-ZXc" id="ISQ-UR-8qE"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -156,10 +161,6 @@
                                     <fontDescription key="titleFontDescription" style="UICTFontTextStyleCaption2"/>
                                     <directionalEdgeInsets key="contentInsets" top="0.0" leading="0.0" bottom="0.0" trailing="0.0"/>
                                 </buttonConfiguration>
-                                <connections>
-                                    <action selector="registerPressed:" destination="UsY-ue-5e9" eventType="touchUpInside" id="vaK-UV-Wiy"/>
-                                    <segue destination="bvU-3t-OLh" kind="unwind" unwindAction="unwindToLogin:" id="ImE-Hq-2LU"/>
-                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3dr-Xz-x3a">
                                 <rect key="frame" x="20" y="778" width="353" height="40"/>
@@ -171,6 +172,9 @@
                                     <fontDescription key="titleFontDescription" type="boldSystem" pointSize="15"/>
                                     <color key="baseBackgroundColor" red="1" green="0.27058823529999998" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="registerPressed:" destination="UsY-ue-5e9" eventType="touchUpInside" id="uer-6c-YjK"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="yGL-Yc-wUq"/>
@@ -203,6 +207,12 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="roA-Fo-v2h"/>
+                    <connections>
+                        <outlet property="emailField" destination="NrU-Fu-4kc" id="TO7-rw-fWz"/>
+                        <outlet property="passwordField" destination="D3i-cd-Y7Z" id="NFz-TK-7t0"/>
+                        <outlet property="usernameField" destination="RLg-s9-RMd" id="wit-Kf-GwD"/>
+                        <segue destination="bvU-3t-OLh" kind="unwind" identifier="toLogin" unwindAction="unwindToLogin:" id="TGv-3L-pBb"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CZi-a6-V4Q" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="bvU-3t-OLh" userLabel="Exit" sceneMemberID="exit"/>

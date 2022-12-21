@@ -17,6 +17,8 @@
 		054870182950312100CEE4F3 /* Topic+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 054870162950312100CEE4F3 /* Topic+CoreDataProperties.swift */; };
 		0548701C2950313C00CEE4F3 /* Comment+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0548701A2950313C00CEE4F3 /* Comment+CoreDataClass.swift */; };
 		0548701D2950313C00CEE4F3 /* Comment+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0548701B2950313C00CEE4F3 /* Comment+CoreDataProperties.swift */; };
+		0548702029503E9400CEE4F3 /* UserRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0548701F29503E9400CEE4F3 /* UserRepository.swift */; };
+		054870222950451E00CEE4F3 /* UIViewController+ShowAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 054870212950451E00CEE4F3 /* UIViewController+ShowAlert.swift */; };
 		055F638F294ADDAF003EE547 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 055F638E294ADDAF003EE547 /* AppDelegate.swift */; };
 		055F6391294ADDAF003EE547 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 055F6390294ADDAF003EE547 /* SceneDelegate.swift */; };
 		055F6393294ADDAF003EE547 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 055F6392294ADDAF003EE547 /* LoginViewController.swift */; };
@@ -28,11 +30,11 @@
 		055F63A8294AECE6003EE547 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 055F63A7294AECE6003EE547 /* HomeViewController.swift */; };
 		05ABB21E294C1BCE00B26886 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 05ABB21D294C1BCE00B26886 /* .gitignore */; };
 		05C145A8294C20F00063EE45 /* BaseRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C145A6294C20F00063EE45 /* BaseRepository.swift */; };
-		05C145AE294C22CA0063EE45 /* Repositories.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C145AD294C22CA0063EE45 /* Repositories.swift */; };
 		05D7F0FA294B006900EE68EB /* UIImageView+CircularImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05D7F0F9294B006900EE68EB /* UIImageView+CircularImage.swift */; };
 		05D7F0FC294B011700EE68EB /* PostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05D7F0FB294B011700EE68EB /* PostViewController.swift */; };
 		05D93443294AF6AF00C94EFA /* (null) in Sources */ = {isa = PBXBuildFile; };
 		05D93445294AF81C00C94EFA /* (null) in Sources */ = {isa = PBXBuildFile; };
+		05E21CF82952D3910046A7B3 /* ValidationError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05E21CF62952D1F80046A7B3 /* ValidationError.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +48,8 @@
 		054870162950312100CEE4F3 /* Topic+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Topic+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
 		0548701A2950313C00CEE4F3 /* Comment+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Comment+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
 		0548701B2950313C00CEE4F3 /* Comment+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Comment+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
+		0548701F29503E9400CEE4F3 /* UserRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepository.swift; sourceTree = "<group>"; };
+		054870212950451E00CEE4F3 /* UIViewController+ShowAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+ShowAlert.swift"; sourceTree = "<group>"; };
 		055F638B294ADDAF003EE547 /* Teddit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Teddit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		055F638E294ADDAF003EE547 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		055F6390294ADDAF003EE547 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -59,9 +63,9 @@
 		055F63A7294AECE6003EE547 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		05ABB21D294C1BCE00B26886 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		05C145A6294C20F00063EE45 /* BaseRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseRepository.swift; sourceTree = "<group>"; };
-		05C145AD294C22CA0063EE45 /* Repositories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repositories.swift; sourceTree = "<group>"; };
 		05D7F0F9294B006900EE68EB /* UIImageView+CircularImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+CircularImage.swift"; sourceTree = "<group>"; };
 		05D7F0FB294B011700EE68EB /* PostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostViewController.swift; sourceTree = "<group>"; };
+		05E21CF62952D1F80046A7B3 /* ValidationError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationError.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +126,14 @@
 			path = Comment;
 			sourceTree = "<group>";
 		};
+		0548701E29503E6E00CEE4F3 /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+				0548701F29503E9400CEE4F3 /* UserRepository.swift */,
+			);
+			path = Repositories;
+			sourceTree = "<group>";
+		};
 		055F6382294ADDAF003EE547 = {
 			isa = PBXGroup;
 			children = (
@@ -142,6 +154,7 @@
 		055F638D294ADDAF003EE547 /* Teddit */ = {
 			isa = PBXGroup;
 			children = (
+				0548701E29503E6E00CEE4F3 /* Repositories */,
 				05D7F0F8294B002200EE68EB /* Extensions */,
 				054870092950309F00CEE4F3 /* Entities */,
 				05C145A6294C20F00063EE45 /* BaseRepository.swift */,
@@ -158,7 +171,7 @@
 				055F639C294ADDB0003EE547 /* LaunchScreen.storyboard */,
 				055F639F294ADDB0003EE547 /* Info.plist */,
 				055F6397294ADDAF003EE547 /* Teddit.xcdatamodeld */,
-				05C145AD294C22CA0063EE45 /* Repositories.swift */,
+				05E21CF62952D1F80046A7B3 /* ValidationError.swift */,
 			);
 			path = Teddit;
 			sourceTree = "<group>";
@@ -167,6 +180,7 @@
 			isa = PBXGroup;
 			children = (
 				05D7F0F9294B006900EE68EB /* UIImageView+CircularImage.swift */,
+				054870212950451E00CEE4F3 /* UIViewController+ShowAlert.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -243,10 +257,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0548702029503E9400CEE4F3 /* UserRepository.swift in Sources */,
 				05D7F0FC294B011700EE68EB /* PostViewController.swift in Sources */,
 				055F6393294ADDAF003EE547 /* LoginViewController.swift in Sources */,
 				0548700E295030D400CEE4F3 /* User+CoreDataProperties.swift in Sources */,
 				055F63A6294AEA06003EE547 /* RegisterViewController.swift in Sources */,
+				05E21CF82952D3910046A7B3 /* ValidationError.swift in Sources */,
 				055F6399294ADDAF003EE547 /* Teddit.xcdatamodeld in Sources */,
 				055F638F294ADDAF003EE547 /* AppDelegate.swift in Sources */,
 				054870122950310B00CEE4F3 /* Post+CoreDataClass.swift in Sources */,
@@ -254,10 +270,10 @@
 				054870172950312100CEE4F3 /* Topic+CoreDataClass.swift in Sources */,
 				05D93445294AF81C00C94EFA /* (null) in Sources */,
 				055F6391294ADDAF003EE547 /* SceneDelegate.swift in Sources */,
-				05C145AE294C22CA0063EE45 /* Repositories.swift in Sources */,
 				0548701C2950313C00CEE4F3 /* Comment+CoreDataClass.swift in Sources */,
 				054870132950310B00CEE4F3 /* Post+CoreDataProperties.swift in Sources */,
 				05D7F0FA294B006900EE68EB /* UIImageView+CircularImage.swift in Sources */,
+				054870222950451E00CEE4F3 /* UIViewController+ShowAlert.swift in Sources */,
 				05D93443294AF6AF00C94EFA /* (null) in Sources */,
 				0548701D2950313C00CEE4F3 /* Comment+CoreDataProperties.swift in Sources */,
 				051E8D88294C535F00D4E717 /* PostTableViewCell.swift in Sources */,
