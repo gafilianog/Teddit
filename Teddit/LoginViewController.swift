@@ -18,6 +18,22 @@ class LoginViewController: UIViewController {
         super.viewDidLoad()
         
         userRepo = UserRepository()
+        
+        // temporary default user
+        var adminEntity = try? userRepo.findByUsername(username: "admin")
+        if adminEntity == nil {
+            adminEntity = userRepo.create()
+            
+            adminEntity!.username = "admin"
+            adminEntity!.email = "admin@mail.com"
+            adminEntity!.password = "admin"
+            
+            do {
+                try userRepo.save(entity: adminEntity!)
+            } catch {
+                print("Cannot create default entity called 'admin': \(error)")
+            }
+        }
     }
     
     @IBAction func unwindToLogin(_ unwindSegue: UIStoryboardSegue) {}
@@ -28,35 +44,34 @@ class LoginViewController: UIViewController {
         let username = usernameField.text!
         let password = passwordField.text!
         
-//        if username.isEmpty {
-//            self.showAlert(title: alertTitle, message: "Username cannot be empty.")
-//            return
-//        }
-//        if password.isEmpty {
-//            self.showAlert(title: alertTitle, message: "Password cannot be empty.")
-//            return
-//        }
-//
-//        do {
-//            let authAlertTitle = "Authentication Error"
-//            if let entity = try userRepo.findByUsername(username: username) {
-//                if entity.password != password {
-//                    self.showAlert(title: authAlertTitle, message: "Password is incorrect.")
-//                    return
-//                }
-//
-//                // TODO: save logged in user data
-//                self.showAlert(title: "Success", message: "Authentication successful.", onOkHandler: {
-//                    self.performSegue(withIdentifier: "loginSuccess", sender: self)
-//                })
-//            } else {
-//                self.showAlert(title: authAlertTitle, message: "This username is not registered.")
-//                return
-//            }
-//        } catch {
-//            print("Cannot fetch for user entity: \(error)")
-//        }
-        performSegue(withIdentifier: "loginSuccess", sender: self)
+        if username.isEmpty {
+            self.showAlert(title: alertTitle, message: "Username cannot be empty.")
+            return
+        }
+        if password.isEmpty {
+            self.showAlert(title: alertTitle, message: "Password cannot be empty.")
+            return
+        }
+
+        do {
+            let authAlertTitle = "Authentication Error"
+            if let entity = try userRepo.findByUsername(username: username) {
+                if entity.password != password {
+                    self.showAlert(title: authAlertTitle, message: "Password is incorrect.")
+                    return
+                }
+
+                UserDefaults.standard.set(entity, forKey: Constants.CURRENT_USER_KEY)                
+                self.showAlert(title: "Success", message: "You have successfully logged in!", onOkHandler: {
+                    self.performSegue(withIdentifier: "loginSuccess", sender: self)
+                })
+            } else {
+                self.showAlert(title: authAlertTitle, message: "This username is not registered.")
+                return
+            }
+        } catch {
+            print("Cannot fetch for user entity: \(error)")
+        }
     }
     
 }

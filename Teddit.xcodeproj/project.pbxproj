@@ -29,6 +29,7 @@
 		055F63A8294AECE6003EE547 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 055F63A7294AECE6003EE547 /* HomeViewController.swift */; };
 		05ABB21E294C1BCE00B26886 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 05ABB21D294C1BCE00B26886 /* .gitignore */; };
 		05B802AF2952F9C70053533B /* TopicItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B802AE2952F9C70053533B /* TopicItemTableViewCell.swift */; };
+		05B802B1295304A20053533B /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B802B0295304A20053533B /* Constants.swift */; };
 		05C145A8294C20F00063EE45 /* BaseRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C145A6294C20F00063EE45 /* BaseRepository.swift */; };
 		05D7F0FA294B006900EE68EB /* UIImageView+CircularImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05D7F0F9294B006900EE68EB /* UIImageView+CircularImage.swift */; };
 		05D93443294AF6AF00C94EFA /* (null) in Sources */ = {isa = PBXBuildFile; };
@@ -61,6 +62,7 @@
 		055F63A7294AECE6003EE547 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		05ABB21D294C1BCE00B26886 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		05B802AE2952F9C70053533B /* TopicItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopicItemTableViewCell.swift; sourceTree = "<group>"; };
+		05B802B0295304A20053533B /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		05C145A6294C20F00063EE45 /* BaseRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseRepository.swift; sourceTree = "<group>"; };
 		05D7F0F9294B006900EE68EB /* UIImageView+CircularImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+CircularImage.swift"; sourceTree = "<group>"; };
 		05E21CF62952D1F80046A7B3 /* ValidationError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationError.swift; sourceTree = "<group>"; };
@@ -169,6 +171,7 @@
 				055F639F294ADDB0003EE547 /* Info.plist */,
 				055F6397294ADDAF003EE547 /* Teddit.xcdatamodeld */,
 				05E21CF62952D1F80046A7B3 /* ValidationError.swift */,
+				05B802B0295304A20053533B /* Constants.swift */,
 			);
 			path = Teddit;
 			sourceTree = "<group>";
@@ -277,6 +280,7 @@
 				055F63A8294AECE6003EE547 /* HomeViewController.swift in Sources */,
 				0548700D295030D400CEE4F3 /* User+CoreDataClass.swift in Sources */,
 				054870182950312100CEE4F3 /* Topic+CoreDataProperties.swift in Sources */,
+				05B802B1295304A20053533B /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
