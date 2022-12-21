@@ -55,7 +55,7 @@ class RegisterViewController: UIViewController {
         }
         
         if username.count < 3 || username.count > 20 {
-            throw ValidationError("Username must be more than 3 characters and less than 20 characters.")
+            throw ValidationError("Username must be 4-20 characters.")
         }
 
         for char in username {
@@ -68,13 +68,15 @@ class RegisterViewController: UIViewController {
             }
         }
         
+        var entity: User? = nil
         do {
-            let entity = try userRepo!.findByUsername(username: username)
-            if entity != nil {
-                throw ValidationError("Username is already taken.")
-            }
+            entity = try userRepo!.findByUsername(username: username)
         } catch {
-            throw ValidationError("Cannot fetch data from Core Data")
+            print("Cannot fetch from Core Data: \(error)")
+        }
+        
+        if entity != nil {
+            throw ValidationError("Username is already taken.")
         }
         
         return username
@@ -92,7 +94,7 @@ class RegisterViewController: UIViewController {
         }
         
         for char in email {
-            if char == "@" || char == "." {
+            if char == "@" || char == "." || char == "_" {
                 continue
             }
             if char.isUppercase {
@@ -104,17 +106,19 @@ class RegisterViewController: UIViewController {
         }
         
         let domain = emailSplit[1]
-        if !domain.contains(".") {
+        if !domain.contains(".") || domain.hasPrefix(".") || domain.hasSuffix(".") {
             throw ValidationError("Email must have a valid domain.")
         }
         
+        var entity: User? = nil
         do {
-            let entity = try userRepo!.findByEmail(email: email)
-            if entity != nil {
-                throw ValidationError("Email is already taken.")
-            }
+            entity = try userRepo!.findByEmail(email: email)
         } catch {
-            throw ValidationError("Cannot fetch data from Core Data.")
+            print("Cannot fetch from Core Data: \(error)")
+        }
+        
+        if entity != nil {
+            throw ValidationError("Email is already taken.")
         }
         
         return email
@@ -164,3 +168,17 @@ class RegisterViewController: UIViewController {
     }
 
 }
+
+/**
+ Validation Case
+ - Username no special char except "_"
+ - Username 4-20
+ - Email only lowercase
+ - Email can use "_" & "."
+ - Email must contains "@"
+ - Email must have valid domain
+ - Password 8-16 chars
+ - Password must contains lower, upper, num, special chars
+ 
+ REMINDER, HIDE PASS TextField
+ */
