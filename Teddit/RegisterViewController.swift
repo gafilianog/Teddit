@@ -160,7 +160,7 @@ class RegisterViewController: UIViewController {
             throw ValidationError("Password must have lowercase characters.")
         }
         if !hasUpper {
-            throw ValidationError("Password must have lowercase characters.")
+            throw ValidationError("Password must have uppercase characters.")
         }
         if !hasNumber {
             throw ValidationError("Password must have lowercase characters.")
