@@ -60,8 +60,10 @@ class LoginViewController: UIViewController {
                     self.showAlert(title: authAlertTitle, message: "Password is incorrect.")
                     return
                 }
-
-                UserDefaults.standard.set(entity, forKey: Constants.CURRENT_USER_KEY)                
+                /*
+                 error in here @Alvian
+                UserDefaults.standard.set(entity, forKey: Constants.CURRENT_USER_KEY)
+                 */
                 self.showAlert(title: "Success", message: "You have successfully logged in!", onOkHandler: {
                     self.performSegue(withIdentifier: "loginSuccess", sender: self)
                 })
