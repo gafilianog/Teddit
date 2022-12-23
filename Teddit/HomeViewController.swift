@@ -10,6 +10,8 @@ import UIKit
 class HomeViewController: UIViewController, UITableViewDataSource {
     
     @IBOutlet var tvTopics: UITableView!
+    var topicRepo: TopicRepository!
+    var topicList: [Topic]!
     
 //    @IBOutlet var tblPosts: UITableView!
 //
@@ -21,6 +23,26 @@ class HomeViewController: UIViewController, UITableViewDataSource {
         super.viewDidLoad()
         
         tvTopics.dataSource = self
+        
+        topicRepo = TopicRepository()
+        /*
+        //adding 4 dummy data (uncomment when start cloning the project)
+        for i in 1...4{
+            let entity = topicRepo.create()
+            entity.image = "sublogo"
+            entity.name = "new name \(i)"
+            entity.desc = "new desc \(i)"
+            
+            //saving dummy data
+            do{
+                try topicRepo.save(entity: entity)
+            } catch {
+                print("Failed to add dummy data")
+            }
+        }
+         */
+        
+        topicList = try? topicRepo.getAll()
     }
     
     @IBAction func actLogOut(_ sender: Any) {
@@ -29,15 +51,15 @@ class HomeViewController: UIViewController, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return topicList.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tvTopics.dequeueReusableCell(withIdentifier: "topicCell") as! TopicItemTableViewCell
+        let cell = tvTopics.dequeueReusableCell(withIdentifier: "topicCell", for: indexPath) as! TopicItemTableViewCell
         
-        cell.imgTopicImage.image = UIImage(named: "sublogo")
-        cell.lblTopicName.text = "t/anime_titties"
-        cell.lblTopicDesc.text = "World News and Geopolitics"
+        cell.imgTopicImage.image = UIImage(named: topicList[indexPath.row].image!)
+        cell.lblTopicName.text = topicList[indexPath.row].name!
+        cell.lblTopicDesc.text = topicList[indexPath.row].desc!
         
         return cell
     }
