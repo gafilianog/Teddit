@@ -17,10 +17,14 @@ class CreateTopicViewController: UIViewController, UITextViewDelegate {
     var topicRepo: TopicRepository!
     
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         topicRepo = TopicRepository()
     }
+    
+    
     
     @IBAction func NameChanged(_ sender: Any) {
         print("Masuk Name")

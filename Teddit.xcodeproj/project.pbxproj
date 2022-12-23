@@ -28,6 +28,7 @@
 		055F63A6294AEA06003EE547 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 055F63A5294AEA06003EE547 /* RegisterViewController.swift */; };
 		055F63A8294AECE6003EE547 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 055F63A7294AECE6003EE547 /* HomeViewController.swift */; };
 		05ABB21E294C1BCE00B26886 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 05ABB21D294C1BCE00B26886 /* .gitignore */; };
+		05AF8C0E2955947F00C8664C /* ForumViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05AF8C0D2955947F00C8664C /* ForumViewController.swift */; };
 		05B802AF2952F9C70053533B /* TopicItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B802AE2952F9C70053533B /* TopicItemTableViewCell.swift */; };
 		05B802B1295304A20053533B /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B802B0295304A20053533B /* Constants.swift */; };
 		05B802B3295306B00053533B /* TopicRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B802B2295306B00053533B /* TopicRepository.swift */; };
@@ -62,6 +63,7 @@
 		055F63A5294AEA06003EE547 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		055F63A7294AECE6003EE547 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		05ABB21D294C1BCE00B26886 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		05AF8C0D2955947F00C8664C /* ForumViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForumViewController.swift; sourceTree = "<group>"; };
 		05B802AE2952F9C70053533B /* TopicItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopicItemTableViewCell.swift; sourceTree = "<group>"; };
 		05B802B0295304A20053533B /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		05B802B2295306B00053533B /* TopicRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopicRepository.swift; sourceTree = "<group>"; };
@@ -167,6 +169,7 @@
 				055F6394294ADDAF003EE547 /* Main.storyboard */,
 				05B802AE2952F9C70053533B /* TopicItemTableViewCell.swift */,
 				051E8D85294C245D00D4E717 /* CreateTopicViewController.swift */,
+				05AF8C0D2955947F00C8664C /* ForumViewController.swift */,
 				055F63A7294AECE6003EE547 /* HomeViewController.swift */,
 				055F63A5294AEA06003EE547 /* RegisterViewController.swift */,
 				055F639A294ADDB0003EE547 /* Assets.xcassets */,
@@ -262,6 +265,7 @@
 			files = (
 				0548702029503E9400CEE4F3 /* UserRepository.swift in Sources */,
 				055F6393294ADDAF003EE547 /* LoginViewController.swift in Sources */,
+				05AF8C0E2955947F00C8664C /* ForumViewController.swift in Sources */,
 				0548700E295030D400CEE4F3 /* User+CoreDataProperties.swift in Sources */,
 				055F63A6294AEA06003EE547 /* RegisterViewController.swift in Sources */,
 				05E21CF82952D3910046A7B3 /* ValidationError.swift in Sources */,
