@@ -371,7 +371,10 @@
                                 <rect key="frame" x="20" y="243" width="353" height="34"/>
                                 <color key="backgroundColor" red="0.8862745098" green="0.8862745098" blue="0.8862745098" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="DescChanged:" destination="S8w-Pe-7eV" eventType="editingDidEnd" id="exm-yC-9qX"/>
+                                </connections>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SE0-ye-xl2">
                                 <rect key="frame" x="20" y="729" width="353" height="40"/>
@@ -384,6 +387,7 @@
                                     <color key="baseBackgroundColor" red="1" green="0.27058823529999998" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </buttonConfiguration>
                                 <connections>
+                                    <action selector="CreateTopicPressed:" destination="S8w-Pe-7eV" eventType="touchUpInside" id="b4h-uJ-eaS"/>
                                     <action selector="loginPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="QjF-dV-hts"/>
                                 </connections>
                             </button>
@@ -391,7 +395,10 @@
                                 <rect key="frame" x="20" y="157" width="353" height="34"/>
                                 <color key="backgroundColor" red="0.8862745098" green="0.8862745098" blue="0.8862745098" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="NameChanged:" destination="S8w-Pe-7eV" eventType="editingChanged" id="8ef-Ez-3U9"/>
+                                </connections>
                             </textField>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="NbO-qs-d8l"/>
@@ -416,6 +423,11 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Create Topic" image="plus" catalog="system" id="nOW-yq-7Yw"/>
                     <navigationItem key="navigationItem" id="c76-jA-7qd"/>
+                    <connections>
+                        <outlet property="CreateTopicButton" destination="SE0-ye-xl2" id="bRy-pP-Ftd"/>
+                        <outlet property="DescTxt" destination="Ct1-YV-MxV" id="fl7-yT-CXT"/>
+                        <outlet property="NameTxt" destination="yqv-B2-6uB" id="O7q-R7-diy"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wuq-80-x0Y" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
