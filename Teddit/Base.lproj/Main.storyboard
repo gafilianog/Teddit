@@ -310,7 +310,7 @@
                                         <connections>
                                             <outlet property="imgTopicImage" destination="CqO-Fl-Cxj" id="Geb-WP-AiS"/>
                                             <outlet property="lblTopicDesc" destination="17D-Hy-eZI" id="obN-Jh-boc"/>
-                                            <outlet property="lblTopicName" destination="17D-Hy-eZI" id="4OL-Vf-Lbp"/>
+                                            <outlet property="lblTopicName" destination="7Pu-ug-906" id="USq-dQ-9eS"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -443,6 +443,7 @@
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="ep5-WK-lYJ" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="gM3-yL-i42">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
