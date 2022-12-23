@@ -17,6 +17,8 @@ extension Topic {
     }
 
     @NSManaged public var name: String?
+    @NSManaged public var image: String?
+    @NSManaged public var desc: String?
     @NSManaged public var posts: NSSet?
 
 }
