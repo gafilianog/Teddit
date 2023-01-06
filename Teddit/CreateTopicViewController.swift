@@ -16,8 +16,6 @@ class CreateTopicViewController: UIViewController, UITextViewDelegate {
     var descIsEmpty = true
     var topicRepo: TopicRepository!
     
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -27,29 +25,13 @@ class CreateTopicViewController: UIViewController, UITextViewDelegate {
     
     
     @IBAction func NameChanged(_ sender: Any) {
-        print("Masuk Name")
-        if(!NameTxt.text!.isEmpty){
-            nameIsEmpty = false
-        }else{
-            nameIsEmpty = true
-        }
-        
-        if(!nameIsEmpty && !descIsEmpty){
-            CreateTopicButton.isEnabled = true
-        }
+        nameIsEmpty = NameTxt.text!.isEmpty
+        CreateTopicButton.isEnabled = !nameIsEmpty && !descIsEmpty
     }
     
     @IBAction func DescChanged(_ sender: Any) {
-        print("Masuk Desc")
-        if(!DescTxt.text!.isEmpty){
-            descIsEmpty = false
-        }else{
-            descIsEmpty = true
-        }
-        
-        if(!nameIsEmpty && !descIsEmpty){
-            CreateTopicButton.isEnabled = true
-        }
+        descIsEmpty = DescTxt.text!.isEmpty
+        CreateTopicButton.isEnabled = !nameIsEmpty && !descIsEmpty
     }
     
     @IBAction func CreateTopicPressed(_ sender: Any) {
