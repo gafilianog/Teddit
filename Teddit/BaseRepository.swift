@@ -21,7 +21,7 @@ class BaseRepository<T : NSManagedObject> {
         self.context = appDelegate.persistentContainer.viewContext
     }
     
-    /*
+    /**
      Creates an entity object with the `entityName` and `context` pre-filled.
      */
     func create() -> T {
@@ -31,6 +31,10 @@ class BaseRepository<T : NSManagedObject> {
     
     /**
      Saves the entity to the database.
+     
+     When an object was created via `create` function, it may not have a `managedObjectContext`
+     therefore when saving is initiated, it will create a new object with a proper `context`, and then
+     finally saves the object to the database.
      */
     func save(entity: T) throws {
         try entity.managedObjectContext!.save()

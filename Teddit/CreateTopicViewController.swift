@@ -70,6 +70,13 @@ class CreateTopicViewController: UIViewController, UITextViewDelegate {
         }catch{
             print("Failed to add new topic")
         }
+        
+        NameTxt.text = ""
+        DescTxt.text = ""
+        CreateTopicButton.isEnabled = false
+        
+        let delegate = self.tabBarController as! ChangeTabDelegate
+        delegate.changeTo(tabIndex: 0)
     }
 
 }
