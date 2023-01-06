@@ -24,16 +24,27 @@ class BaseRepository<T : NSManagedObject> {
     /*
      Creates an entity object with the `entityName` and `context` pre-filled.
      */
-    func create() -> T {
+    func create(storeToContext: Bool = false) -> T {
         let entityDesc = NSEntityDescription.entity(forEntityName: entityName, in: context)!
-        return T(entity: entityDesc, insertInto: context)
+        return T(entity: entityDesc, insertInto: nil)
     }
     
     /**
      Saves the entity to the database.
+     
+     When an object was created via `create` function, it may not have a `managedObjectContext`
+     therefore when saving is initiated, it will create a new object with a proper `context`, and then
+     finally saves the object to the database.
      */
-    func save(entity: T) throws {
-        try entity.managedObjectContext!.save()
+    func save(entity: T) throws -> T {
+        var currentEntity = entity
+        
+        if currentEntity.managedObjectContext == nil {
+            currentEntity = self.create(storeToContext: true)
+        }
+        
+        try context.save()
+        return currentEntity
     }
     
     /**
