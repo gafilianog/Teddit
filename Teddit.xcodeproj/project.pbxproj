@@ -30,6 +30,7 @@
 		055F63A8294AECE6003EE547 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 055F63A7294AECE6003EE547 /* HomeViewController.swift */; };
 		05A09BF12967D9C20033A658 /* Shared.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05A09BF02967D9C20033A658 /* Shared.swift */; };
 		05A1DCC22968025C00D08DD5 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05A1DCC12968025C00D08DD5 /* TabBarController.swift */; };
+		05A1DCC42968203D00D08DD5 /* PostRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05A1DCC32968203D00D08DD5 /* PostRepository.swift */; };
 		05ABB21E294C1BCE00B26886 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 05ABB21D294C1BCE00B26886 /* .gitignore */; };
 		05AF8C0E2955947F00C8664C /* ForumViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05AF8C0D2955947F00C8664C /* ForumViewController.swift */; };
 		05B802AF2952F9C70053533B /* TopicItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B802AE2952F9C70053533B /* TopicItemTableViewCell.swift */; };
@@ -68,6 +69,7 @@
 		055F63A7294AECE6003EE547 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		05A09BF02967D9C20033A658 /* Shared.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shared.swift; sourceTree = "<group>"; };
 		05A1DCC12968025C00D08DD5 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		05A1DCC32968203D00D08DD5 /* PostRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostRepository.swift; sourceTree = "<group>"; };
 		05ABB21D294C1BCE00B26886 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		05AF8C0D2955947F00C8664C /* ForumViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForumViewController.swift; sourceTree = "<group>"; };
 		05B802AE2952F9C70053533B /* TopicItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopicItemTableViewCell.swift; sourceTree = "<group>"; };
@@ -141,6 +143,7 @@
 			children = (
 				0548701F29503E9400CEE4F3 /* UserRepository.swift */,
 				05B802B2295306B00053533B /* TopicRepository.swift */,
+				05A1DCC32968203D00D08DD5 /* PostRepository.swift */,
 			);
 			path = Repositories;
 			sourceTree = "<group>";
@@ -273,6 +276,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0548702029503E9400CEE4F3 /* UserRepository.swift in Sources */,
+				05A1DCC42968203D00D08DD5 /* PostRepository.swift in Sources */,
 				055F6393294ADDAF003EE547 /* LoginViewController.swift in Sources */,
 				05AF8C0E2955947F00C8664C /* ForumViewController.swift in Sources */,
 				0548700E295030D400CEE4F3 /* User+CoreDataProperties.swift in Sources */,

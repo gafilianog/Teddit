@@ -32,4 +32,19 @@ class AuthUtils {
         return try! JSONDecoder().decode(UserCoded.self, from: data!)
     }
     
+    static func getActualUser() -> User? {
+        let codedUser = getUser()
+        if codedUser == nil {
+            return nil
+        }
+        
+        let repo = UserRepository()
+        let user = try? repo.findByEmail(email: codedUser!.email)
+        if user == nil {
+            return nil
+        }
+        
+        return user
+    }
+    
 }

@@ -13,9 +13,18 @@ class ForumViewController: UIViewController, UITableViewDelegate, UITableViewDat
     @IBOutlet var imgSubLogo: UIImageView!
     @IBOutlet var tvForumPost: UITableView!
     
-    let titles = ["If elevators hadn't been invented, all the CEOs and important people would have their offices on the first floor as a sign of status.", "If elevators hadn't been invented, all the CEOs.", "If elevators hadn't been invented, all the CEOs and important people would have their offices on the first floor as a sign of status. If elevators hadn't been invented, all the CEOs and important people.", "If elevators hadn't been invented, all the CEOs and important people would have their offices on the first floor as a sign of status.", "If elevators hadn't been invented, all the CEOs.", "If elevators hadn't been invented, all the CEOs and important people would have their offices on the first floor as a sign of status. If elevators hadn't been invented, all the CEOs and important people."]
-    let usernames = ["john_doe", "jane_doe", "pakerte", "john_doe", "jane_doe", "pakerte"]
-    let commentCounts = [100, 0, 9999, 100, 0, 9999]
+    @IBOutlet var tvTitle: UILabel!
+    @IBOutlet var tvDescription: UILabel!
+    
+//    let titles = ["If elevators hadn't been invented, all the CEOs and important people would have their offices on the first floor as a sign of status.", "If elevators hadn't been invented, all the CEOs.", "If elevators hadn't been invented, all the CEOs and important people would have their offices on the first floor as a sign of status. If elevators hadn't been invented, all the CEOs and important people.", "If elevators hadn't been invented, all the CEOs and important people would have their offices on the first floor as a sign of status.", "If elevators hadn't been invented, all the CEOs.", "If elevators hadn't been invented, all the CEOs and important people would have their offices on the first floor as a sign of status. If elevators hadn't been invented, all the CEOs and important people."]
+//    let usernames = ["john_doe", "jane_doe", "pakerte", "john_doe", "jane_doe", "pakerte"]
+//    let commentCounts = [100, 0, 9999, 100, 0, 9999]
+    
+    let topicRepo = TopicRepository()
+    let postRepo = PostRepository()
+    
+    var topic: Topic? = nil
+    var postList = [Post]()
     
     private let floatAddButton: UIButton = {
         let button = UIButton(frame: CGRect(x: 0, y: 0, width: 50, height: 50))
@@ -37,14 +46,53 @@ class ForumViewController: UIViewController, UITableViewDelegate, UITableViewDat
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.initSample()
+        
+        // todo: change to current topic from a segue
+        topic = try! topicRepo.getAll()[0]
+        tvTitle.text = topic!.name
+        tvDescription.text = topic!.desc
+
+        let allPosts = try! postRepo.getAll()
+        print(allPosts)
+        
+        if allPosts.isEmpty {
+            let post = postRepo.create()
+            post.title = "Keqing kawaii"
+            post.content = "You know what? This is bullshit, keqing is my waifu"
+            post.author = AuthUtils.getActualUser()!
+
+            try! postRepo.save(entity: post)
+            
+            topic!.addToPosts(post)
+            try! topicRepo.save(entity: topic!)
+        }
+        
+        postList = topic!.posts!.allObjects as! [Post]
+        
         imgSubLogo.setRound()
         tvForumPost.dataSource = self
 
         view.addSubview(floatAddButton)
         floatAddButton.addTarget(self, action: #selector(plusPressed), for: .touchUpInside)
         
-        
         // Do any additional setup after loading the view.
+    }
+    
+    func initSample() {
+        let userRepo = UserRepository()
+        var adminEntity = try? userRepo.findByUsername(username: "admin")
+        if adminEntity == nil {
+            adminEntity = userRepo.create()
+            
+            adminEntity!.username = "admin"
+            adminEntity!.email = "admin@mail.com"
+            adminEntity!.password = "admin"
+            
+            try! userRepo.save(entity: adminEntity!)
+        }
+        
+        AuthUtils.storeUser(adminEntity!)
     }
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
@@ -52,13 +100,20 @@ class ForumViewController: UIViewController, UITableViewDelegate, UITableViewDat
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return usernames.count
+        return postList.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tvForumPost.dequeueReusableCell(withIdentifier: "post_cell", for: indexPath) as! PostItemTableViewCell
         
-        cell.configure(username: usernames[indexPath.row], title: titles[indexPath.row], commentCount: commentCounts[indexPath.row])
+        let row = indexPath.row
+        let currentPost = postList[row]
+        
+        cell.configure(
+            username: currentPost.author!.username!,
+            title: currentPost.title!,
+            commentCount: currentPost.comments!.count
+        )
         
         return cell
     }

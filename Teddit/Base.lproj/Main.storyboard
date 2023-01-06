@@ -483,7 +483,9 @@
                     <connections>
                         <outlet property="imgSubBanner" destination="yek-m3-OPf" id="1P0-FG-Fyz"/>
                         <outlet property="imgSubLogo" destination="chr-37-rBY" id="ggN-RG-S0o"/>
+                        <outlet property="tvDescription" destination="Suc-Hs-UmY" id="wjA-B0-llp"/>
                         <outlet property="tvForumPost" destination="JnU-iy-sYz" id="Haa-K2-LbS"/>
+                        <outlet property="tvTitle" destination="UOO-UX-7XA" id="gHc-Th-UqT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Vii-Dm-egE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
