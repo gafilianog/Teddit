@@ -12,6 +12,7 @@ class CreateTopicViewController: UIViewController, UITextViewDelegate {
     @IBOutlet weak var DescTxt: UITextField!
     @IBOutlet weak var NameTxt: UITextField!
     @IBOutlet weak var CreateTopicButton: UIButton!
+
     var nameIsEmpty = true
     var descIsEmpty = true
     var topicRepo: TopicRepository!
@@ -21,8 +22,6 @@ class CreateTopicViewController: UIViewController, UITextViewDelegate {
         
         topicRepo = TopicRepository()
     }
-    
-    
     
     @IBAction func NameChanged(_ sender: Any) {
         nameIsEmpty = NameTxt.text!.isEmpty
@@ -38,7 +37,29 @@ class CreateTopicViewController: UIViewController, UITextViewDelegate {
         let nameTxt: String = NameTxt.text!
         let descTxt: String = DescTxt.text!
         //nantinya gambar topic bisa di upload juga
-        //save to new topic
+        
+        let alertTitle = "Validation Error"
+        for char in nameTxt {
+            if char == "_" {
+                continue
+            }
+            if char == " " {
+                self.showAlert(title: alertTitle, message: "Topic name cannot use space, use '_' to separate between words or combine them.")
+                return
+            }
+            
+            if !char.isLetter && !char.isNumber {
+                self.showAlert(title: alertTitle, message: "Topic name cannot use any special characters.")
+                return
+            }
+        }
+        
+        let foundTopic = try? topicRepo.findByName(name: nameTxt)
+        if foundTopic != nil {
+            self.showAlert(title: alertTitle, message: "This topic has already existed.")
+            return
+        }
+        
         let entity = topicRepo.create()
         entity.name = nameTxt
         entity.desc = descTxt
@@ -50,25 +71,5 @@ class CreateTopicViewController: UIViewController, UITextViewDelegate {
             print("Failed to add new topic")
         }
     }
-    //    func textViewDidChange(_ textView: UITextView) {
-//        if !textView.text.isEmpty && !isFocusTv {
-//            tvBodyPost.text = "" + textView.text
-//            isFocusTv = true
-//            tvBodyPost.textColor = .black
-//        }
-//    }
-    
-//    func textViewDidBeginEditing(_ textView: UITextView) {
-//        if tvBodyPost.textColor == .lightGray {
-//            tvBodyPost.text = ""
-//            tvBodyPost.textColor = .black
-//        }
-//    }
-    
-//    func textViewDidEndEditing(_ textView: UITextView) {
-//        if tvBodyPost.text == "" {
-//            tvBodyPost.text = PLACEHOLDER
-//            tvBodyPost.textColor = .lightGray
-//        }
-//    }
+
 }
