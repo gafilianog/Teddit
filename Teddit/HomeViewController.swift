@@ -45,6 +45,16 @@ class HomeViewController: UIViewController, UITableViewDataSource {
         topicList = try? topicRepo.getAll()
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        self.refreshTable()
+    }
+    
+    func refreshTable() {
+        topicList = try? topicRepo.getAll()
+        tvTopics.reloadData()
+    }
+    
     @IBAction func actLogOut(_ sender: Any) {
         // TODO: clear logged in user data
         performSegue(withIdentifier: "logout", sender: self)

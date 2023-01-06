@@ -447,7 +447,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
-                                    <action selector="DescChanged:" destination="S8w-Pe-7eV" eventType="editingDidEnd" id="exm-yC-9qX"/>
+                                    <action selector="DescChanged:" destination="S8w-Pe-7eV" eventType="editingChanged" id="tPq-Ug-M4I"/>
                                 </connections>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SE0-ye-xl2">
