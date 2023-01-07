@@ -22,7 +22,6 @@ class PostItemTableViewCell: UITableViewCell {
         vCardContainer.layer.shadowColor = UIColor.lightGray.cgColor
         vCardContainer.layer.shadowOffset = CGSize(width: 1.0, height: 1.0)
         vCardContainer.layer.shadowOpacity = 0.1
-        vCardContainer.layer.masksToBounds = false
         vCardContainer.layer.cornerRadius = 10
     }
 
