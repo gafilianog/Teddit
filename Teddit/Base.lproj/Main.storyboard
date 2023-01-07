@@ -492,6 +492,92 @@
             </objects>
             <point key="canvasLocation" x="-761.06870229007632" y="2087.323943661972"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="eHP-wm-3a6">
+            <objects>
+                <viewController id="LIj-MQ-cps" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="yCO-5G-hV4">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Create a post" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8IU-md-TU9">
+                                <rect key="frame" x="20" y="79" width="181" height="36"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="30"/>
+                                <color key="textColor" red="1" green="0.27058823529999998" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Topic name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gc1-9Q-o52">
+                                <rect key="frame" x="20" y="135" width="61" height="14"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleCaption2"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Topic description" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dcM-6z-1Q6">
+                                <rect key="frame" x="20" y="221" width="91" height="14"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleCaption2"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="A place for squirrel fans" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9yF-Vz-ehf">
+                                <rect key="frame" x="20" y="243" width="353" height="34"/>
+                                <color key="backgroundColor" red="0.8862745098" green="0.8862745098" blue="0.8862745098" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="DescChanged:" destination="S8w-Pe-7eV" eventType="editingChanged" id="pl3-yJ-vc6"/>
+                                </connections>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1gg-rj-0uK">
+                                <rect key="frame" x="20" y="758" width="353" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="Lzz-TT-VIU"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Post" cornerStyle="capsule">
+                                    <fontDescription key="titleFontDescription" type="boldSystem" pointSize="15"/>
+                                    <color key="baseBackgroundColor" red="1" green="0.27058823529999998" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="CreateTopicPressed:" destination="S8w-Pe-7eV" eventType="touchUpInside" id="I6H-j8-roe"/>
+                                    <action selector="loginPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="yRk-Nq-Kjx"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="topic_name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="TOo-ph-wcQ">
+                                <rect key="frame" x="20" y="157" width="353" height="34"/>
+                                <color key="backgroundColor" red="0.8862745098" green="0.8862745098" blue="0.8862745098" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="NameChanged:" destination="S8w-Pe-7eV" eventType="editingChanged" id="0kK-7k-bDl"/>
+                                </connections>
+                            </textField>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="HaH-y3-iLz"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="9yF-Vz-ehf" firstAttribute="leading" secondItem="HaH-y3-iLz" secondAttribute="leading" constant="20" id="9XY-uo-I7D"/>
+                            <constraint firstItem="8IU-md-TU9" firstAttribute="top" secondItem="HaH-y3-iLz" secondAttribute="top" constant="20" id="G0d-DI-6lp"/>
+                            <constraint firstItem="9yF-Vz-ehf" firstAttribute="top" secondItem="dcM-6z-1Q6" secondAttribute="bottom" constant="8" symbolic="YES" id="Pb2-eT-Cr9"/>
+                            <constraint firstItem="Gc1-9Q-o52" firstAttribute="leading" secondItem="HaH-y3-iLz" secondAttribute="leading" constant="20" id="PzJ-2o-6vX"/>
+                            <constraint firstItem="TOo-ph-wcQ" firstAttribute="leading" secondItem="HaH-y3-iLz" secondAttribute="leading" constant="20" id="SQs-84-YZG"/>
+                            <constraint firstItem="HaH-y3-iLz" firstAttribute="trailing" secondItem="TOo-ph-wcQ" secondAttribute="trailing" constant="20" id="UV8-CX-Q7p"/>
+                            <constraint firstItem="HaH-y3-iLz" firstAttribute="trailing" secondItem="1gg-rj-0uK" secondAttribute="trailing" constant="20" id="Wzy-6S-rri"/>
+                            <constraint firstItem="HaH-y3-iLz" firstAttribute="bottom" secondItem="1gg-rj-0uK" secondAttribute="bottom" constant="20" id="dnf-p1-w3x"/>
+                            <constraint firstItem="dcM-6z-1Q6" firstAttribute="leading" secondItem="HaH-y3-iLz" secondAttribute="leading" constant="20" id="dpJ-a4-Lme"/>
+                            <constraint firstItem="Gc1-9Q-o52" firstAttribute="top" secondItem="8IU-md-TU9" secondAttribute="bottom" constant="20" id="fbQ-Nr-owv"/>
+                            <constraint firstItem="TOo-ph-wcQ" firstAttribute="top" secondItem="Gc1-9Q-o52" secondAttribute="bottom" constant="8" symbolic="YES" id="kyX-qm-bey"/>
+                            <constraint firstItem="1gg-rj-0uK" firstAttribute="leading" secondItem="HaH-y3-iLz" secondAttribute="leading" constant="20" id="oiP-xZ-TVs"/>
+                            <constraint firstItem="HaH-y3-iLz" firstAttribute="trailing" secondItem="9yF-Vz-ehf" secondAttribute="trailing" constant="20" id="qH7-YU-EbH"/>
+                            <constraint firstItem="8IU-md-TU9" firstAttribute="leading" secondItem="HaH-y3-iLz" secondAttribute="leading" constant="20" id="rQE-WV-pQo"/>
+                            <constraint firstItem="dcM-6z-1Q6" firstAttribute="top" secondItem="TOo-ph-wcQ" secondAttribute="bottom" constant="30" id="yyy-Od-m04"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="jlG-iK-srA"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9nI-w0-1Yq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-761" y="2821"/>
+        </scene>
         <!--Create Topic-->
         <scene sceneID="Voi-Mc-Kzh">
             <objects>
