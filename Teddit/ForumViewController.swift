@@ -25,13 +25,12 @@ class ForumViewController: UIViewController, UITableViewDelegate, UITableViewDat
     private let floatAddButton: UIButton = {
         let button = UIButton(frame: CGRect(x: 0, y: 0, width: 50, height: 50))
         button.layer.masksToBounds = true
-        button.layer.cornerRadius = 0.5 * button.bounds.size.width
-        button.backgroundColor = .blue
-
+        button.layer.cornerRadius = 10
+        button.backgroundColor = UIColor(red: 255.0 / 255.0, green: 69.0 / 255.0, blue: 0.0, alpha: 1.0)
+        
         button.setImage(UIImage(systemName: "pencil", withConfiguration: UIImage.SymbolConfiguration(pointSize: 32, weight: .medium)), for: .normal)
 
         button.tintColor = .white
-        button.setTitleColor(.white, for: .normal)
 
         button.layer.shadowRadius = 10
         button.layer.shadowOpacity = 0.2
@@ -45,7 +44,7 @@ class ForumViewController: UIViewController, UITableViewDelegate, UITableViewDat
         tvTitle.text = "t/\(topic!.name!)"
         tvDescription.text = topic!.desc
         
-        postList = topic!.posts!.allObjects as! [Post]
+        self.refreshForum()
         
         imgSubLogo.setRound()
         tvForumPost.dataSource = self
@@ -85,10 +84,25 @@ class ForumViewController: UIViewController, UITableViewDelegate, UITableViewDat
     }
     
     @objc private func plusPressed(){
-        //do something
-        
+        self.performSegue(withIdentifier: "toCreatePost", sender: self)
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toCreatePost" {
+            let dest = segue.destination as! CreatePostViewController
+            dest.topic = topic!
+        }
+    }
+    
+    func refreshForum() {
+        postList = topic!.posts!.allObjects as! [Post]
+        postList.sort(by: { $0.comments!.count > $1.comments!.count })
+        tvForumPost.reloadData()
+    }
+    
+    @IBAction func unwindToForum(_ unwindSegue: UIStoryboardSegue) {
+        self.refreshForum()
+    }
 
     /*
     // MARK: - Navigation

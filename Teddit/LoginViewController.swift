@@ -63,6 +63,9 @@ class LoginViewController: UIViewController {
                 
                 AuthUtils.storeUser(entity)
                 self.showAlert(title: "Success", message: "You have successfully logged in!", onOkHandler: {
+                    self.usernameField.text = ""
+                    self.passwordField.text = ""
+                    
                     self.performSegue(withIdentifier: "loginSuccess", sender: self)
                 })
             } else {
