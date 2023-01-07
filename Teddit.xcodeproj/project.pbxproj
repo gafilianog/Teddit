@@ -41,6 +41,7 @@
 		05D93443294AF6AF00C94EFA /* (null) in Sources */ = {isa = PBXBuildFile; };
 		05D93445294AF81C00C94EFA /* (null) in Sources */ = {isa = PBXBuildFile; };
 		05E21CF82952D3910046A7B3 /* ValidationError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05E21CF62952D1F80046A7B3 /* ValidationError.swift */; };
+		05EA4B34296966970044006B /* CommentRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05EA4B33296966970044006B /* CommentRepository.swift */; };
 		05FF75BD29693F0E00B85544 /* CreatePostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05FF75BC29693F0E00B85544 /* CreatePostViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -79,6 +80,7 @@
 		05C145A6294C20F00063EE45 /* BaseRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseRepository.swift; sourceTree = "<group>"; };
 		05D7F0F9294B006900EE68EB /* UIImageView+CircularImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+CircularImage.swift"; sourceTree = "<group>"; };
 		05E21CF62952D1F80046A7B3 /* ValidationError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationError.swift; sourceTree = "<group>"; };
+		05EA4B33296966970044006B /* CommentRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentRepository.swift; sourceTree = "<group>"; };
 		05FF75BC29693F0E00B85544 /* CreatePostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePostViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -119,6 +121,7 @@
 				0548701F29503E9400CEE4F3 /* UserRepository.swift */,
 				05B802B2295306B00053533B /* TopicRepository.swift */,
 				05A1DCC32968203D00D08DD5 /* PostRepository.swift */,
+				05EA4B33296966970044006B /* CommentRepository.swift */,
 			);
 			path = Repositories;
 			sourceTree = "<group>";
@@ -283,6 +286,7 @@
 				055F6393294ADDAF003EE547 /* LoginViewController.swift in Sources */,
 				05AF8C0E2955947F00C8664C /* ForumViewController.swift in Sources */,
 				0548700E295030D400CEE4F3 /* User+CoreDataProperties.swift in Sources */,
+				05EA4B34296966970044006B /* CommentRepository.swift in Sources */,
 				055F63A6294AEA06003EE547 /* RegisterViewController.swift in Sources */,
 				05E21CF82952D3910046A7B3 /* ValidationError.swift in Sources */,
 				055F6399294ADDAF003EE547 /* Teddit.xcdatamodeld in Sources */,
