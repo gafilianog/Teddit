@@ -48,12 +48,12 @@
 		0545AEFB29680A200012751B /* PostItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostItemTableViewCell.swift; sourceTree = "<group>"; };
 		0548700B295030D400CEE4F3 /* User+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+CoreDataClass.swift"; sourceTree = "<group>"; };
 		0548700C295030D400CEE4F3 /* User+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		054870102950310B00CEE4F3 /* Post+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Post+CoreDataClass.swift"; path = "Teddit/Post+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
-		054870112950310B00CEE4F3 /* Post+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Post+CoreDataProperties.swift"; path = "Teddit/Post+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
-		054870152950312100CEE4F3 /* Topic+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Topic+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
-		054870162950312100CEE4F3 /* Topic+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Topic+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
-		0548701A2950313C00CEE4F3 /* Comment+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Comment+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
-		0548701B2950313C00CEE4F3 /* Comment+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Comment+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
+		054870102950310B00CEE4F3 /* Post+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Post+CoreDataClass.swift"; path = "Teddit/Entities/Post/Post+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
+		054870112950310B00CEE4F3 /* Post+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Post+CoreDataProperties.swift"; path = "Teddit/Entities/Post/Post+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
+		054870152950312100CEE4F3 /* Topic+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Topic+CoreDataClass.swift"; path = "Teddit/Entities/Topic/Topic+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
+		054870162950312100CEE4F3 /* Topic+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Topic+CoreDataProperties.swift"; path = "Teddit/Entities/Topic/Topic+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
+		0548701A2950313C00CEE4F3 /* Comment+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Comment+CoreDataClass.swift"; path = "Teddit/Entities/Comment/Comment+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
+		0548701B2950313C00CEE4F3 /* Comment+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Comment+CoreDataProperties.swift"; path = "Teddit/Entities/Comment/Comment+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
 		0548701F29503E9400CEE4F3 /* UserRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepository.swift; sourceTree = "<group>"; };
 		054870212950451E00CEE4F3 /* UIViewController+ShowAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+ShowAlert.swift"; sourceTree = "<group>"; };
 		055F638B294ADDAF003EE547 /* Teddit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Teddit.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -94,9 +94,9 @@
 		054870092950309F00CEE4F3 /* Entities */ = {
 			isa = PBXGroup;
 			children = (
-				054870192950312A00CEE4F3 /* Comment */,
-				054870142950311200CEE4F3 /* Topic */,
-				0548700F295030F000CEE4F3 /* Post */,
+				05EA4B3229693E430044006B /* Comment */,
+				05EA4B3129693E2A0044006B /* Topic */,
+				05EA4B3029693E1D0044006B /* Post */,
 				0548700A295030AC00CEE4F3 /* User */,
 			);
 			path = Entities;
@@ -109,33 +109,6 @@
 				0548700C295030D400CEE4F3 /* User+CoreDataProperties.swift */,
 			);
 			path = User;
-			sourceTree = "<group>";
-		};
-		0548700F295030F000CEE4F3 /* Post */ = {
-			isa = PBXGroup;
-			children = (
-				054870102950310B00CEE4F3 /* Post+CoreDataClass.swift */,
-				054870112950310B00CEE4F3 /* Post+CoreDataProperties.swift */,
-			);
-			path = Post;
-			sourceTree = "<group>";
-		};
-		054870142950311200CEE4F3 /* Topic */ = {
-			isa = PBXGroup;
-			children = (
-				054870152950312100CEE4F3 /* Topic+CoreDataClass.swift */,
-				054870162950312100CEE4F3 /* Topic+CoreDataProperties.swift */,
-			);
-			path = Topic;
-			sourceTree = "<group>";
-		};
-		054870192950312A00CEE4F3 /* Comment */ = {
-			isa = PBXGroup;
-			children = (
-				0548701A2950313C00CEE4F3 /* Comment+CoreDataClass.swift */,
-				0548701B2950313C00CEE4F3 /* Comment+CoreDataProperties.swift */,
-			);
-			path = Comment;
 			sourceTree = "<group>";
 		};
 		0548701E29503E6E00CEE4F3 /* Repositories */ = {
@@ -201,6 +174,33 @@
 				054870212950451E00CEE4F3 /* UIViewController+ShowAlert.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		05EA4B3029693E1D0044006B /* Post */ = {
+			isa = PBXGroup;
+			children = (
+				054870102950310B00CEE4F3 /* Post+CoreDataClass.swift */,
+				054870112950310B00CEE4F3 /* Post+CoreDataProperties.swift */,
+			);
+			path = Post;
+			sourceTree = "<group>";
+		};
+		05EA4B3129693E2A0044006B /* Topic */ = {
+			isa = PBXGroup;
+			children = (
+				054870152950312100CEE4F3 /* Topic+CoreDataClass.swift */,
+				054870162950312100CEE4F3 /* Topic+CoreDataProperties.swift */,
+			);
+			path = Topic;
+			sourceTree = "<group>";
+		};
+		05EA4B3229693E430044006B /* Comment */ = {
+			isa = PBXGroup;
+			children = (
+				0548701A2950313C00CEE4F3 /* Comment+CoreDataClass.swift */,
+				0548701B2950313C00CEE4F3 /* Comment+CoreDataProperties.swift */,
+			);
+			path = Comment;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
