@@ -42,7 +42,7 @@ class ForumViewController: UIViewController, UITableViewDelegate, UITableViewDat
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        tvTitle.text = topic!.name
+        tvTitle.text = "t/\(topic!.name)"
         tvDescription.text = topic!.desc
         
         postList = topic!.posts!.allObjects as! [Post]
