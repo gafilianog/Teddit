@@ -41,6 +41,7 @@
 		05D93443294AF6AF00C94EFA /* (null) in Sources */ = {isa = PBXBuildFile; };
 		05D93445294AF81C00C94EFA /* (null) in Sources */ = {isa = PBXBuildFile; };
 		05E21CF82952D3910046A7B3 /* ValidationError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05E21CF62952D1F80046A7B3 /* ValidationError.swift */; };
+		05FF75BD29693F0E00B85544 /* CreatePostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05FF75BC29693F0E00B85544 /* CreatePostViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -78,6 +79,7 @@
 		05C145A6294C20F00063EE45 /* BaseRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseRepository.swift; sourceTree = "<group>"; };
 		05D7F0F9294B006900EE68EB /* UIImageView+CircularImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+CircularImage.swift"; sourceTree = "<group>"; };
 		05E21CF62952D1F80046A7B3 /* ValidationError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationError.swift; sourceTree = "<group>"; };
+		05FF75BC29693F0E00B85544 /* CreatePostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePostViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -149,6 +151,7 @@
 				055F6390294ADDAF003EE547 /* SceneDelegate.swift */,
 				055F6392294ADDAF003EE547 /* LoginViewController.swift */,
 				055F6394294ADDAF003EE547 /* Main.storyboard */,
+				05FF75BC29693F0E00B85544 /* CreatePostViewController.swift */,
 				0545AEFB29680A200012751B /* PostItemTableViewCell.swift */,
 				05B802AE2952F9C70053533B /* TopicItemTableViewCell.swift */,
 				051E8D85294C245D00D4E717 /* CreateTopicViewController.swift */,
@@ -302,6 +305,7 @@
 				051E8D86294C245D00D4E717 /* CreateTopicViewController.swift in Sources */,
 				055F63A8294AECE6003EE547 /* HomeViewController.swift in Sources */,
 				0548700D295030D400CEE4F3 /* User+CoreDataClass.swift in Sources */,
+				05FF75BD29693F0E00B85544 /* CreatePostViewController.swift in Sources */,
 				05A1DCC22968025C00D08DD5 /* TabBarController.swift in Sources */,
 				054870182950312100CEE4F3 /* Topic+CoreDataProperties.swift in Sources */,
 				05B802B1295304A20053533B /* Constants.swift in Sources */,
