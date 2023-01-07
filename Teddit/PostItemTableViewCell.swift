@@ -16,7 +16,7 @@ class PostItemTableViewCell: UITableViewCell {
     
     func configure(username: String, title: String, commentCount: Int) {
         lblUsername.text = "Posted by u/\(username)"
-        lblPostTitle.text = title
+        lblPostTitle.text = "t/\(title)"
         lblCommentCount.text = String(commentCount)
         
         vCardContainer.layer.shadowColor = UIColor.lightGray.cgColor
