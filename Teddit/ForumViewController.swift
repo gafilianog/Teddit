@@ -45,7 +45,7 @@ class ForumViewController: UIViewController, UITableViewDelegate, UITableViewDat
         tvTitle.text = "t/\(topic!.name!)"
         tvDescription.text = topic!.desc
         
-        postList = topic!.posts!.allObjects as! [Post]
+        self.refreshForum()
         
         imgSubLogo.setRound()
         tvForumPost.dataSource = self
@@ -85,10 +85,24 @@ class ForumViewController: UIViewController, UITableViewDelegate, UITableViewDat
     }
     
     @objc private func plusPressed(){
-        //do something
-        
+        self.performSegue(withIdentifier: "toCreatePost", sender: self)
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toCreatePost" {
+            let dest = segue.destination as! CreatePostViewController
+            dest.topic = topic!
+        }
+    }
+    
+    func refreshForum() {
+        postList = topic!.posts!.allObjects as! [Post]
+        tvForumPost.reloadData()
+    }
+    
+    @IBAction func unwindToForum(_ unwindSegue: UIStoryboardSegue) {
+        self.refreshForum()
+    }
 
     /*
     // MARK: - Navigation
