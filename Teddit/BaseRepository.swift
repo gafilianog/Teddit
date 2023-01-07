@@ -44,4 +44,12 @@ class BaseRepository<T : NSManagedObject> {
         return try context.fetch(req) as! [T]
     }
     
+    /**
+     Deletes an entity from the database.
+     */
+    func delete(entity: T) throws {
+        context.delete(entity)
+        try context.save()
+    }
+    
 }

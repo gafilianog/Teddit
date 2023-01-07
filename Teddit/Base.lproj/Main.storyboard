@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="fMe-pI-7oa">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
@@ -334,6 +334,7 @@
                     <connections>
                         <outlet property="tvTopics" destination="X9k-em-ELN" id="dlT-5Y-X73"/>
                         <segue destination="Vay-Th-Rvy" kind="unwind" identifier="logout" unwindAction="unwindToLogin:" id="Xga-nJ-JkH"/>
+                        <segue destination="fMe-pI-7oa" kind="show" identifier="toForum" id="xvf-wI-l51"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VI6-n9-2bk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -346,11 +347,11 @@
             <objects>
                 <viewController id="fMe-pI-7oa" customClass="ForumViewController" customModule="Teddit" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Sw2-Ld-q9w">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="783"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="JnU-iy-sYz">
-                                <rect key="frame" x="0.0" y="253.33333333333331" width="393" height="564.66666666666674"/>
+                                <rect key="frame" x="0.0" y="253.33333333333331" width="393" height="529.66666666666674"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="post_cell" rowHeight="91" id="4Jz-eC-Hhz" customClass="PostItemTableViewCell" customModule="Teddit" customModuleProvider="target">
@@ -480,6 +481,7 @@
                             <constraint firstItem="Suc-Hs-UmY" firstAttribute="top" secondItem="UOO-UX-7XA" secondAttribute="bottom" constant="5" id="sBs-ka-kbL"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="vPK-OX-HP3"/>
                     <connections>
                         <outlet property="imgSubBanner" destination="yek-m3-OPf" id="1P0-FG-Fyz"/>
                         <outlet property="imgSubLogo" destination="chr-37-rBY" id="ggN-RG-S0o"/>
@@ -490,7 +492,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Vii-Dm-egE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-761.06870229007632" y="2087.323943661972"/>
+            <point key="canvasLocation" x="-761" y="2156"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="eHP-wm-3a6">
