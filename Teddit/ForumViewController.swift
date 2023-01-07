@@ -16,10 +16,6 @@ class ForumViewController: UIViewController, UITableViewDelegate, UITableViewDat
     @IBOutlet var tvTitle: UILabel!
     @IBOutlet var tvDescription: UILabel!
     
-//    let titles = ["If elevators hadn't been invented, all the CEOs and important people would have their offices on the first floor as a sign of status.", "If elevators hadn't been invented, all the CEOs.", "If elevators hadn't been invented, all the CEOs and important people would have their offices on the first floor as a sign of status. If elevators hadn't been invented, all the CEOs and important people.", "If elevators hadn't been invented, all the CEOs and important people would have their offices on the first floor as a sign of status.", "If elevators hadn't been invented, all the CEOs.", "If elevators hadn't been invented, all the CEOs and important people would have their offices on the first floor as a sign of status. If elevators hadn't been invented, all the CEOs and important people."]
-//    let usernames = ["john_doe", "jane_doe", "pakerte", "john_doe", "jane_doe", "pakerte"]
-//    let commentCounts = [100, 0, 9999, 100, 0, 9999]
-    
     let topicRepo = TopicRepository()
     let postRepo = PostRepository()
     
@@ -46,27 +42,8 @@ class ForumViewController: UIViewController, UITableViewDelegate, UITableViewDat
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.initSample()
-        
-        // todo: change to current topic from a segue
-        topic = try! topicRepo.getAll()[0]
         tvTitle.text = topic!.name
         tvDescription.text = topic!.desc
-
-        let allPosts = try! postRepo.getAll()
-        print(allPosts)
-        
-        if allPosts.isEmpty {
-            let post = postRepo.create()
-            post.title = "Keqing kawaii"
-            post.content = "You know what? This is bullshit, keqing is my waifu"
-            post.author = AuthUtils.getActualUser()!
-
-            try! postRepo.save(entity: post)
-            
-            topic!.addToPosts(post)
-            try! topicRepo.save(entity: topic!)
-        }
         
         postList = topic!.posts!.allObjects as! [Post]
         
@@ -77,22 +54,6 @@ class ForumViewController: UIViewController, UITableViewDelegate, UITableViewDat
         floatAddButton.addTarget(self, action: #selector(plusPressed), for: .touchUpInside)
         
         // Do any additional setup after loading the view.
-    }
-    
-    func initSample() {
-        let userRepo = UserRepository()
-        var adminEntity = try? userRepo.findByUsername(username: "admin")
-        if adminEntity == nil {
-            adminEntity = userRepo.create()
-            
-            adminEntity!.username = "admin"
-            adminEntity!.email = "admin@mail.com"
-            adminEntity!.password = "admin"
-            
-            try! userRepo.save(entity: adminEntity!)
-        }
-        
-        AuthUtils.storeUser(adminEntity!)
     }
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
