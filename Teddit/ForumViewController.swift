@@ -24,10 +24,10 @@ class ForumViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     private let floatAddButton: UIButton = {
         let button = UIButton(frame: CGRect(x: 0, y: 0, width: 50, height: 50))
-//        button.layer.masksToBounds = true
+        button.layer.masksToBounds = true
         button.layer.cornerRadius = 10
-        button.backgroundColor = .orange
-
+        button.backgroundColor = UIColor(red: 255.0 / 255.0, green: 69.0 / 255.0, blue: 0.0, alpha: 1.0)
+        
         button.setImage(UIImage(systemName: "pencil", withConfiguration: UIImage.SymbolConfiguration(pointSize: 32, weight: .medium)), for: .normal)
 
         button.tintColor = .white
