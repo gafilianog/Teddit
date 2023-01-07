@@ -28,7 +28,7 @@ class ForumViewController: UIViewController, UITableViewDelegate, UITableViewDat
         button.layer.cornerRadius = 0.5 * button.bounds.size.width
         button.backgroundColor = .blue
 
-        button.setImage(UIImage(systemName: "plus", withConfiguration: UIImage.SymbolConfiguration(pointSize: 32, weight: .medium)), for: .normal)
+        button.setImage(UIImage(systemName: "pencil", withConfiguration: UIImage.SymbolConfiguration(pointSize: 32, weight: .medium)), for: .normal)
 
         button.tintColor = .white
         button.setTitleColor(.white, for: .normal)

@@ -16,22 +16,24 @@ class CreatePostViewController: UIViewController, UITextViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        tvPostBody.layer.cornerRadius = 6
-        tvPostBody.layer.borderColor = UIColor.gray.withAlphaComponent(0.3).cgColor
-        tvPostBody.layer.borderWidth = 0.5
-        tvPostBody.textColor = .lightGray
+//        tvPostBody.layer.cornerRadius = 6
+//        tvPostBody.layer.borderColor = UIColor.gray.withAlphaComponent(0.3).cgColor
+//        tvPostBody.layer.borderWidth = 0.5
+//        tvPostBody.textColor = .lightGray
 //        tvPostBody.text = "LOREM IPSUM"
-//
+        
         tvPostBody.delegate = self
     }
     
     func textViewDidChange(_ textView: UITextView) {
-        lblFakePlaceholder.isHidden = true
+        lblFakePlaceholder.isHidden = !tvPostBody.text.isEmpty
 //        if tvPostBody.textColor == .lightGray && tvPostBody.isFirstResponder {
 //            tvPostBody.text = nil
 //            tvPostBody.textColor = .black
 //        }
     }
+    
+//    textview
     
 //    func textViewDidBeginEditing(_ textView: UITextView) {
 //        if tvPostBody.textColor == .lightGray && tvPostBody.isFirstResponder {
