@@ -96,6 +96,7 @@ class ForumViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     func refreshForum() {
         postList = topic!.posts!.allObjects as! [Post]
+        postList.sort(by: { $0.comments!.count > $1.comments!.count })
         tvForumPost.reloadData()
     }
     
