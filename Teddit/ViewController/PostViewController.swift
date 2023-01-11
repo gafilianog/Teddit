@@ -18,6 +18,11 @@ class PostViewController: UIViewController, UITableViewDataSource {
     @IBOutlet var btnAddComment: UIButton!
     @IBOutlet var tblComments: UITableView!
     
+    @IBOutlet var lblTitle: UILabel!
+    @IBOutlet var lblTopic: UILabel!
+    @IBOutlet var lblAuthor: UILabel!
+    @IBOutlet var lblCommentCount: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -37,11 +42,16 @@ class PostViewController: UIViewController, UITableViewDataSource {
         
         btnAddComment.contentHorizontalAlignment = .leading
         
+        lblTitle.text = post!.title
+        lblTopic.text = "r/\(post!.topic!.name!)"
+        lblAuthor.text = "u/\(post!.author!.username!)"
+        
         self.refreshPost()
     }
     
     func refreshPost() {
         commentList = post!.comments!.allObjects as! [Comment]
+        lblCommentCount.text = String(commentList.count)
         tblComments.reloadData()
     }
     
@@ -60,5 +70,15 @@ class PostViewController: UIViewController, UITableViewDataSource {
         return commentCell
     }
     
-    @IBAction func unwindToPost(_ unwindSegue: UIStoryboardSegue) {}
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toCreateComment" {
+            let dest = segue.destination as! CreateCommentViewController
+            dest.post = post
+        }
+    }
+    
+    @IBAction func unwindToPost(_ unwindSegue: UIStoryboardSegue) {
+        self.refreshPost()
+    }
+    
 }

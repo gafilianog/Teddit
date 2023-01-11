@@ -581,7 +581,7 @@
                                             <color key="baseForegroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </buttonConfiguration>
                                         <connections>
-                                            <segue destination="mBX-de-zME" kind="show" id="Uab-Y1-95o"/>
+                                            <segue destination="mBX-de-zME" kind="show" identifier="toCreateComment" id="Uab-Y1-95o"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -684,6 +684,10 @@
                     <connections>
                         <outlet property="btnAddComment" destination="7lt-tE-Idw" id="TS8-JL-b5c"/>
                         <outlet property="imgSubLogo" destination="o5R-eG-iTg" id="jIU-Ue-8tP"/>
+                        <outlet property="lblAuthor" destination="Gs6-mc-zo6" id="hik-3O-apN"/>
+                        <outlet property="lblCommentCount" destination="4ys-yX-g0L" id="SaR-t2-1dg"/>
+                        <outlet property="lblTitle" destination="5Da-i8-g8j" id="Rol-72-S4e"/>
+                        <outlet property="lblTopic" destination="6V6-YN-ahN" id="I0w-9a-jYj"/>
                         <outlet property="tblComments" destination="JdF-GX-aVz" id="QU6-ZQ-bgp"/>
                         <outlet property="vFooterContainer" destination="Ptg-e2-8SG" id="hOw-d7-hwY"/>
                         <outlet property="vHeaderContainer" destination="lf7-fz-KbF" id="1FR-Mm-Puw"/>
@@ -691,7 +695,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UMp-qa-w2f" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="68" y="2156"/>
+            <point key="canvasLocation" x="67.938931297709928" y="2155.6338028169016"/>
         </scene>
         <!--Create Comment View Controller-->
         <scene sceneID="U7Z-Aj-Wf8">
@@ -701,7 +705,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="783"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bSk-yd-9ey">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Post title to comment" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bSk-yd-9ey">
                                 <rect key="frame" x="20" y="69" width="353" height="14.333333333333329"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="14.33" id="eEV-Qq-Xfe"/>
@@ -729,7 +733,6 @@
                                 </buttonConfiguration>
                                 <connections>
                                     <action selector="actComment:" destination="mBX-de-zME" eventType="touchUpInside" id="42p-cC-tX1"/>
-                                    <action selector="registerPressed:" destination="UsY-ue-5e9" eventType="touchUpInside" id="cOO-r1-hHb"/>
                                 </connections>
                             </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="eCq-ay-VbE">
@@ -769,6 +772,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="7KC-Wz-TOI"/>
                     <connections>
+                        <outlet property="btnComment" destination="3PF-ls-G9b" id="2bC-9m-oX8"/>
                         <outlet property="lblFakePlaceholder" destination="Q1J-kR-lJn" id="EaX-sc-zSo"/>
                         <outlet property="lblTitle" destination="bSk-yd-9ey" id="zh1-NK-mIr"/>
                         <outlet property="tvCommentSection" destination="eCq-ay-VbE" id="3zk-9u-cNu"/>

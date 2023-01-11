@@ -14,8 +14,7 @@ class CommentItemTableViewCell: UITableViewCell {
     @IBOutlet var lblComment: UILabel!
     
     func configure(username: String, comment: String) {
-        
-        lblUsername.text = username
+        lblUsername.text = "u/\(username)"
         lblComment.text = comment
         
         vCommentContainer.layer.shadowColor = UIColor.lightGray.cgColor
