@@ -101,6 +101,31 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		053B94AF296EA6C900161A40 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				055F6392294ADDAF003EE547 /* LoginViewController.swift */,
+				051E8D85294C245D00D4E717 /* CreateTopicViewController.swift */,
+				05FF75BC29693F0E00B85544 /* CreatePostViewController.swift */,
+				05C89242296E980000677429 /* CreateCommentViewController.swift */,
+				05FF75BE296954F000B85544 /* PostViewController.swift */,
+				05AF8C0D2955947F00C8664C /* ForumViewController.swift */,
+				055F63A7294AECE6003EE547 /* HomeViewController.swift */,
+				055F63A5294AEA06003EE547 /* RegisterViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		053B94B0296EA6F500161A40 /* TableView */ = {
+			isa = PBXGroup;
+			children = (
+				05C89240296E6E5900677429 /* CommentItemTableViewCell.swift */,
+				0545AEFB29680A200012751B /* PostItemTableViewCell.swift */,
+				05B802AE2952F9C70053533B /* TopicItemTableViewCell.swift */,
+			);
+			path = TableView;
+			sourceTree = "<group>";
+		};
 		054870092950309F00CEE4F3 /* Entities */ = {
 			isa = PBXGroup;
 			children = (
@@ -152,32 +177,23 @@
 		055F638D294ADDAF003EE547 /* Teddit */ = {
 			isa = PBXGroup;
 			children = (
+				053B94B0296EA6F500161A40 /* TableView */,
+				053B94AF296EA6C900161A40 /* ViewController */,
 				0548701E29503E6E00CEE4F3 /* Repositories */,
 				05D7F0F8294B002200EE68EB /* Extensions */,
 				054870092950309F00CEE4F3 /* Entities */,
+				055F6394294ADDAF003EE547 /* Main.storyboard */,
 				05C145A6294C20F00063EE45 /* BaseRepository.swift */,
 				055F638E294ADDAF003EE547 /* AppDelegate.swift */,
 				055F6390294ADDAF003EE547 /* SceneDelegate.swift */,
-				055F6392294ADDAF003EE547 /* LoginViewController.swift */,
-				055F6394294ADDAF003EE547 /* Main.storyboard */,
-				051E8D85294C245D00D4E717 /* CreateTopicViewController.swift */,
-				05FF75BC29693F0E00B85544 /* CreatePostViewController.swift */,
-				05C89242296E980000677429 /* CreateCommentViewController.swift */,
-				05C89240296E6E5900677429 /* CommentItemTableViewCell.swift */,
-				05FF75BE296954F000B85544 /* PostViewController.swift */,
-				0545AEFB29680A200012751B /* PostItemTableViewCell.swift */,
-				05B802AE2952F9C70053533B /* TopicItemTableViewCell.swift */,
-				05AF8C0D2955947F00C8664C /* ForumViewController.swift */,
-				055F63A7294AECE6003EE547 /* HomeViewController.swift */,
-				055F63A5294AEA06003EE547 /* RegisterViewController.swift */,
-				055F639A294ADDB0003EE547 /* Assets.xcassets */,
-				055F639C294ADDB0003EE547 /* LaunchScreen.storyboard */,
-				055F639F294ADDB0003EE547 /* Info.plist */,
-				055F6397294ADDAF003EE547 /* Teddit.xcdatamodeld */,
 				05E21CF62952D1F80046A7B3 /* ValidationError.swift */,
 				05B802B0295304A20053533B /* Constants.swift */,
 				05A09BF02967D9C20033A658 /* Shared.swift */,
 				05A1DCC12968025C00D08DD5 /* TabBarController.swift */,
+				055F639A294ADDB0003EE547 /* Assets.xcassets */,
+				055F639C294ADDB0003EE547 /* LaunchScreen.storyboard */,
+				055F639F294ADDB0003EE547 /* Info.plist */,
+				055F6397294ADDAF003EE547 /* Teddit.xcdatamodeld */,
 			);
 			path = Teddit;
 			sourceTree = "<group>";
