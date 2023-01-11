@@ -21,6 +21,7 @@ class ForumViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     var topic: Topic? = nil
     var postList = [Post]()
+    var selectedRow: Int?
     
     private let floatAddButton: UIButton = {
         let button = UIButton(frame: CGRect(x: 0, y: 0, width: 50, height: 50))
@@ -48,6 +49,7 @@ class ForumViewController: UIViewController, UITableViewDelegate, UITableViewDat
         
         imgSubLogo.setRound()
         tvForumPost.dataSource = self
+        tvForumPost.delegate = self
 
         view.addSubview(floatAddButton)
         floatAddButton.addTarget(self, action: #selector(plusPressed), for: .touchUpInside)
@@ -78,6 +80,12 @@ class ForumViewController: UIViewController, UITableViewDelegate, UITableViewDat
         return cell
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        selectedRow = indexPath.row
+        self.performSegue(withIdentifier: "toPost", sender: self)
+    }
+    
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         floatAddButton.frame = CGRect(x: view.frame.size.width - 80, y: view.frame.size.height - 90, width: 50, height: 50)
@@ -88,9 +96,20 @@ class ForumViewController: UIViewController, UITableViewDelegate, UITableViewDat
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "toCreatePost" {
+        
+        switch segue.identifier {
+        case "toCreatePost":
             let dest = segue.destination as! CreatePostViewController
             dest.topic = topic!
+            
+            break
+        case "toPost":
+            let dest = segue.destination as! PostViewController
+            dest.post = postList[selectedRow!]
+            
+            break
+        default:
+            return
         }
     }
     
