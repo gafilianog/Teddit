@@ -89,6 +89,8 @@ class ForumViewController: UIViewController, UITableViewDelegate, UITableViewDat
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         floatAddButton.frame = CGRect(x: view.frame.size.width - 80, y: view.frame.size.height - 90, width: 50, height: 50)
+        
+        self.refreshForum()
     }
     
     @objc private func plusPressed(){
