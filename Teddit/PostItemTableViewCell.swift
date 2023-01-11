@@ -15,6 +15,7 @@ class PostItemTableViewCell: UITableViewCell {
     @IBOutlet var lblCommentCount: UILabel!
     
     func configure(username: String, title: String, commentCount: Int) {
+        
         lblUsername.text = "Posted by u/\(username)"
         lblPostTitle.text = title
         lblCommentCount.text = String(commentCount)
