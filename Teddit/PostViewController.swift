@@ -59,4 +59,6 @@ class PostViewController: UIViewController, UITableViewDataSource {
         
         return commentCell
     }
+    
+    @IBAction func unwindToPost(_ unwindSegue: UIStoryboardSegue) {}
 }

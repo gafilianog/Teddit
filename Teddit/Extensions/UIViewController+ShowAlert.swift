@@ -18,4 +18,8 @@ extension UIViewController {
         self.present(alertView, animated: true)
     }
     
+    open override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
+    
 }

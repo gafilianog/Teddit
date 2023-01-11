@@ -21,7 +21,6 @@ class RegisterViewController: UIViewController {
         userRepo = UserRepository()
     }
     
-    
     @IBAction func actToLogin(_ sender: Any) {
         performSegue(withIdentifier: "toLogin", sender: self)
     }

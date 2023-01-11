@@ -38,6 +38,7 @@
 		05B802B3295306B00053533B /* TopicRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B802B2295306B00053533B /* TopicRepository.swift */; };
 		05C145A8294C20F00063EE45 /* BaseRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C145A6294C20F00063EE45 /* BaseRepository.swift */; };
 		05C89241296E6E5900677429 /* CommentItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C89240296E6E5900677429 /* CommentItemTableViewCell.swift */; };
+		05C89243296E980000677429 /* CreateCommentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C89242296E980000677429 /* CreateCommentViewController.swift */; };
 		05D7F0FA294B006900EE68EB /* UIImageView+CircularImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05D7F0F9294B006900EE68EB /* UIImageView+CircularImage.swift */; };
 		05D93443294AF6AF00C94EFA /* (null) in Sources */ = {isa = PBXBuildFile; };
 		05D93445294AF81C00C94EFA /* (null) in Sources */ = {isa = PBXBuildFile; };
@@ -81,6 +82,7 @@
 		05B802B2295306B00053533B /* TopicRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopicRepository.swift; sourceTree = "<group>"; };
 		05C145A6294C20F00063EE45 /* BaseRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseRepository.swift; sourceTree = "<group>"; };
 		05C89240296E6E5900677429 /* CommentItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentItemTableViewCell.swift; sourceTree = "<group>"; };
+		05C89242296E980000677429 /* CreateCommentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateCommentViewController.swift; sourceTree = "<group>"; };
 		05D7F0F9294B006900EE68EB /* UIImageView+CircularImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+CircularImage.swift"; sourceTree = "<group>"; };
 		05E21CF62952D1F80046A7B3 /* ValidationError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationError.swift; sourceTree = "<group>"; };
 		05EA4B33296966970044006B /* CommentRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentRepository.swift; sourceTree = "<group>"; };
@@ -158,12 +160,13 @@
 				055F6390294ADDAF003EE547 /* SceneDelegate.swift */,
 				055F6392294ADDAF003EE547 /* LoginViewController.swift */,
 				055F6394294ADDAF003EE547 /* Main.storyboard */,
+				051E8D85294C245D00D4E717 /* CreateTopicViewController.swift */,
+				05FF75BC29693F0E00B85544 /* CreatePostViewController.swift */,
+				05C89242296E980000677429 /* CreateCommentViewController.swift */,
 				05C89240296E6E5900677429 /* CommentItemTableViewCell.swift */,
 				05FF75BE296954F000B85544 /* PostViewController.swift */,
-				05FF75BC29693F0E00B85544 /* CreatePostViewController.swift */,
 				0545AEFB29680A200012751B /* PostItemTableViewCell.swift */,
 				05B802AE2952F9C70053533B /* TopicItemTableViewCell.swift */,
-				051E8D85294C245D00D4E717 /* CreateTopicViewController.swift */,
 				05AF8C0D2955947F00C8664C /* ForumViewController.swift */,
 				055F63A7294AECE6003EE547 /* HomeViewController.swift */,
 				055F63A5294AEA06003EE547 /* RegisterViewController.swift */,
@@ -320,6 +323,7 @@
 				05FF75BD29693F0E00B85544 /* CreatePostViewController.swift in Sources */,
 				05A1DCC22968025C00D08DD5 /* TabBarController.swift in Sources */,
 				054870182950312100CEE4F3 /* Topic+CoreDataProperties.swift in Sources */,
+				05C89243296E980000677429 /* CreateCommentViewController.swift in Sources */,
 				05B802B1295304A20053533B /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

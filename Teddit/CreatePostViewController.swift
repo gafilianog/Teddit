@@ -37,6 +37,7 @@ class CreatePostViewController: UIViewController, UITextViewDelegate {
 //        }
     }
     
+    // TODO: enable button when title not empty
     @IBAction func onTitleChange(_ sender: Any) {
         btnPost.isEnabled = tfPostTitle.hasText
     }
