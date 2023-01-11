@@ -9,20 +9,14 @@ import UIKit
 
 class PostViewController: UIViewController, UITableViewDataSource {
     
+    var post: Post?
+    var commentList = [Comment]()
+    
     @IBOutlet var vHeaderContainer: UIView!
     @IBOutlet var imgSubLogo: UIImageView!
     @IBOutlet var vFooterContainer: UIView!
     @IBOutlet var btnAddComment: UIButton!
     @IBOutlet var tblComments: UITableView!
-    
-    var commentList = [
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In eu semper leo. Proin maximus augue non est placerat sodales. Maecenas in pharetra tellus, a venenatis orci.",
-        "Vivamus sed nisi ut justo luctus ornare. Morbi non ex quis tortor tristique molestie.\n\nDonec in interdum velit, nec dictum nisi. Aenean et odio eleifend, maximus lectus et, ullamcorper diam. Ut molestie enim ut imperdiet commodo.\n\nPraesent sit amet turpis quis augue euismod dapibus. Nulla dapibus tempor purus vel vestibulum.",
-        "Sed eu hendrerit nulla.",
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In eu semper leo. Proin maximus augue non est placerat sodales. Maecenas in pharetra tellus, a venenatis orci.",
-        "Vivamus sed nisi ut justo luctus ornare. Morbi non ex quis tortor tristique molestie.\nDonec in interdum velit, nec dictum nisi. Aenean et odio eleifend, maximus lectus et, ullamcorper diam. Ut molestie enim ut imperdiet commodo.\nPraesent sit amet turpis quis augue euismod dapibus. Nulla dapibus tempor purus vel vestibulum.",
-        "Sed eu hendrerit nulla."
-    ]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,6 +36,13 @@ class PostViewController: UIViewController, UITableViewDataSource {
         vFooterContainer.layer.cornerRadius = 20
         
         btnAddComment.contentHorizontalAlignment = .leading
+        
+        self.refreshPost()
+    }
+    
+    func refreshPost() {
+        commentList = post!.comments!.allObjects as! [Comment]
+        tblComments.reloadData()
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -51,7 +52,10 @@ class PostViewController: UIViewController, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let commentCell = tblComments.dequeueReusableCell(withIdentifier: "comment_cell", for: indexPath) as! CommentItemTableViewCell
         
-        commentCell.configure(username: "john_doe", comment: commentList[indexPath.row])
+        let row = indexPath.row
+        let comment = commentList[row]
+        
+        commentCell.configure(username: comment.author!.username!, comment: comment.content!)
         
         return commentCell
     }
