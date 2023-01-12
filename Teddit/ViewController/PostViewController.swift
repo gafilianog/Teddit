@@ -55,8 +55,8 @@ class PostViewController: UIViewController, UITableViewDataSource {
         let currentUser = AuthUtils.getActualUser()!
         let isAuthor = (currentUser == post!.author)
         
-        btnEdit.isHidden = isAuthor
-        btnDelete.isHidden = isAuthor
+        btnEdit.isHidden = !isAuthor
+        btnDelete.isHidden = !isAuthor
         
         self.refreshPost()
     }

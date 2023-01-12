@@ -31,9 +31,13 @@ class CreateEditPostViewController: UIViewController, UITextViewDelegate {
         tvPostContent.delegate = self
         
         lblPageTitle.text = pageTitle
-        btnPost.titleLabel!.text = btnTitle
         
         if currentPost != nil {
+            lblFakePlaceholder.isHidden = true
+            btnPost.isEnabled = true
+            btnPost.setTitle(btnTitle, for: .normal)
+            btnPost.setTitle(btnTitle, for: .disabled)
+            
             tfPostTitle.text = currentPost!.title
             tvPostContent.text = currentPost!.content
         }
