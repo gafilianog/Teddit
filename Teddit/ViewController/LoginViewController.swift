@@ -36,6 +36,12 @@ class LoginViewController: UIViewController {
         }
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        print(AuthUtils.getActualUser())
+    }
+    
     @IBAction func onLoginBtnPressed(_ sender: Any) {
         let alertTitle = "Validation Error"
         

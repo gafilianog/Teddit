@@ -61,7 +61,7 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     }
     
     @IBAction func onLogoutBtnPressed(_ sender: Any) {
-        // TODO: clear logged in user data
+        AuthUtils.clearCurrentUser()
         performSegue(withIdentifier: "logout", sender: self)
     }
     

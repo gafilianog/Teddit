@@ -32,6 +32,10 @@ class AuthUtils {
         return try! JSONDecoder().decode(UserCoded.self, from: data!)
     }
     
+    static func clearCurrentUser() {
+        UserDefaults.standard.removeObject(forKey: Constants.CURRENT_USER_KEY)
+    }
+    
     static func getActualUser() -> User? {
         let codedUser = getUser()
         if codedUser == nil {
