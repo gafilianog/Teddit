@@ -9,12 +9,12 @@ import UIKit
 
 class ForumViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
-    @IBOutlet var imgSubBanner: UIImageView!
     @IBOutlet var imgSubLogo: UIImageView!
-    @IBOutlet var tvForumPost: UITableView!
+    @IBOutlet var lblTopicName: UILabel!
+    @IBOutlet var lblTopicDesc: UILabel!
+    @IBOutlet var vTopicHeaderContainer: UIView!
     
-    @IBOutlet var tvTitle: UILabel!
-    @IBOutlet var tvDescription: UILabel!
+    @IBOutlet var tvForumPost: UITableView!
     
     let topicRepo = TopicRepository()
     let postRepo = PostRepository()
@@ -42,8 +42,12 @@ class ForumViewController: UIViewController, UITableViewDelegate, UITableViewDat
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        tvTitle.text = "t/\(topic!.name!)"
-        tvDescription.text = topic!.desc
+//        self.navigationController.navigationBar.tintColor = UIColor.whiteColor();
+        
+        lblTopicName.text = "t/\(topic!.name!)"
+        lblTopicDesc.text = topic!.desc
+        
+//        imgSubLogo.image = UIImage(named: "\(topic!.image)")
         
         self.refreshForum()
         
@@ -54,11 +58,10 @@ class ForumViewController: UIViewController, UITableViewDelegate, UITableViewDat
         view.addSubview(floatAddButton)
         floatAddButton.addTarget(self, action: #selector(plusPressed), for: .touchUpInside)
         
-        // Do any additional setup after loading the view.
-    }
-    
-    override var preferredStatusBarStyle: UIStatusBarStyle {
-        return .lightContent
+        vTopicHeaderContainer.layer.shadowColor = UIColor.lightGray.cgColor
+        vTopicHeaderContainer.layer.shadowOffset = CGSize(width: 1.0, height: 1.0)
+        vTopicHeaderContainer.layer.shadowOpacity = 0.1
+        vTopicHeaderContainer.layer.cornerRadius = 10
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -86,11 +89,17 @@ class ForumViewController: UIViewController, UITableViewDelegate, UITableViewDat
         self.performSegue(withIdentifier: "toPost", sender: self)
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        self.navigationController?.navigationBar.tintColor = UIColor.white
+        
+        self.refreshForum()
+    }
+    
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         floatAddButton.frame = CGRect(x: view.frame.size.width - 80, y: view.frame.size.height - 90, width: 50, height: 50)
         
-        self.refreshForum()
+//        self.refreshForum()
     }
     
     @objc private func plusPressed(){
@@ -114,6 +123,10 @@ class ForumViewController: UIViewController, UITableViewDelegate, UITableViewDat
             return
         }
     }
+    
+//    override func viewWillLayoutSubviews() {
+//        self.refreshForum()
+//    }
     
     func refreshForum() {
         postList = topic!.posts!.allObjects as! [Post]

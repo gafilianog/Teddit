@@ -21,12 +21,17 @@ class PostViewController: UIViewController, UITableViewDataSource {
     @IBOutlet var lblTitle: UILabel!
     @IBOutlet var lblTopic: UILabel!
     @IBOutlet var lblAuthor: UILabel!
+    @IBOutlet var lblContent: UILabel!
     @IBOutlet var lblCommentCount: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.navigationController?.navigationBar.tintColor = UIColor(red: 255.0 / 255.0, green: 69.0 / 255.0, blue: 0.0, alpha: 1.0)
+        
         tblComments.dataSource = self
+        
+        imgSubLogo.image = UIImage(named: "\(post!.topic!.image!)")
         
         imgSubLogo.setRound()
         
@@ -43,8 +48,9 @@ class PostViewController: UIViewController, UITableViewDataSource {
         btnAddComment.contentHorizontalAlignment = .leading
         
         lblTitle.text = post!.title
-        lblTopic.text = "r/\(post!.topic!.name!)"
+        lblTopic.text = "t/\(post!.topic!.name!)"
         lblAuthor.text = "u/\(post!.author!.username!)"
+        lblContent.text = post!.content
         
         self.refreshPost()
     }
@@ -76,6 +82,18 @@ class PostViewController: UIViewController, UITableViewDataSource {
             dest.post = post
         }
     }
+    
+//    override func viewDidAppear(_ animated: Bool) {
+//        <#code#>
+//    }
+    
+//    override func viewWillAppear(_ animated: Bool) {
+//        self.refreshPost()
+//    }
+    
+//    override func viewDidLayoutSubviews() {
+//        self.refreshPost()
+//    }
     
     @IBAction func unwindToPost(_ unwindSegue: UIStoryboardSegue) {
         self.refreshPost()

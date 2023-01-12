@@ -63,7 +63,7 @@ class CreateTopicViewController: UIViewController, UITextViewDelegate {
         let entity = topicRepo.create()
         entity.name = nameTxt
         entity.desc = descTxt
-        entity.image = "sublogo"
+        entity.image = "default_sub_logo"
         
         do{
             try topicRepo.save(entity: entity)
@@ -75,8 +75,10 @@ class CreateTopicViewController: UIViewController, UITextViewDelegate {
         DescTxt.text = ""
         CreateTopicButton.isEnabled = false
         
-        let delegate = self.tabBarController as! ChangeTabDelegate
-        delegate.changeTo(tabIndex: 0)
+        performSegue(withIdentifier: "toHome", sender: self)
+        
+//        let delegate = self.tabBarController as! ChangeTabDelegate
+//        delegate.changeTo(tabIndex: 0)
     }
 
 }

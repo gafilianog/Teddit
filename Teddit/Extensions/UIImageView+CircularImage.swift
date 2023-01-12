@@ -13,8 +13,8 @@ extension UIImageView {
     func setRound() {
         layer.borderWidth = 1
         layer.masksToBounds = false
-        layer.borderColor = UIColor.black.cgColor
-        layer.cornerRadius = self.frame.height / 2
+        layer.borderColor = UIColor(red: 255.0 / 255.0, green: 69.0 / 255.0, blue: 0.0, alpha: 1.0).cgColor
+        layer.cornerRadius = self.frame.width / 2
         clipsToBounds = true
     }
 }

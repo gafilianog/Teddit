@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "sublogo.png",
+      "filename" : "subLogo.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "sublogo 1.png",
+      "filename" : "subLogo 1.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "sublogo 2.png",
+      "filename" : "subLogo 2.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

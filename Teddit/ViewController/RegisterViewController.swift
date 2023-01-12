@@ -92,9 +92,14 @@ class RegisterViewController: UIViewController {
             throw ValidationError("Email cannot be empty.")
         }
         
-        let emailSplit = email.split(separator: "@")
-        if emailSplit.count != 2 {
+        if !email.contains("@") {
             throw ValidationError("Email must contains '@'.")
+        }
+        
+        let emailSplit = email.split(separator: "@")
+        
+        if emailSplit.count != 2 {
+            throw ValidationError("Email must contains domain")
         }
         
         for char in email {
@@ -141,16 +146,16 @@ class RegisterViewController: UIViewController {
         var hasNumber = false
         
         for char in password {
-            if char.isUppercase {
+            if char.isUppercase && !hasUpper {
                 hasUpper = true
             }
-            if char.isLowercase {
+            if char.isLowercase && !hasLower {
                 hasLower = true
             }
-            if char.isNumber {
+            if char.isNumber && !hasNumber {
                 hasNumber = true
             }
-            if (!char.isLetter && !char.isNumber) {
+            if (!char.isLetter && !char.isNumber && !hasSpecial) {
                 hasSpecial = true
             }
         }
@@ -162,7 +167,7 @@ class RegisterViewController: UIViewController {
             throw ValidationError("Password must have uppercase characters.")
         }
         if !hasNumber {
-            throw ValidationError("Password must have lowercase characters.")
+            throw ValidationError("Password must have number.")
         }
         if !hasSpecial {
             throw ValidationError("Password must have special characters.")
@@ -172,17 +177,3 @@ class RegisterViewController: UIViewController {
     }
 
 }
-
-/**
- Validation Case
- - Username no special char except "_"
- - Username 4-20
- - Email only lowercase
- - Email can use "_" & "."
- - Email must contains "@"
- - Email must have valid domain
- - Password 8-16 chars
- - Password must contains lower, upper, num, special chars
- 
- REMINDER, HIDE PASS TextField
- */

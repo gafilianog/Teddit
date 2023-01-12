@@ -66,7 +66,7 @@ class LoginViewController: UIViewController {
                     self.usernameField.text = ""
                     self.passwordField.text = ""
                     
-                    self.performSegue(withIdentifier: "loginSuccess", sender: self)
+                    self.performSegue(withIdentifier: "toHome", sender: self)
                 })
             } else {
                 self.showAlert(title: authAlertTitle, message: "This username is not registered.")
