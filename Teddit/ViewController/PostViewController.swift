@@ -62,6 +62,9 @@ class PostViewController: UIViewController, UITableViewDataSource {
     }
     
     func refreshPost() {
+        lblPostTitle.text = post!.title
+        lblPostContent.text = post!.content
+        
         commentList = post!.comments!.allObjects as! [Comment]
         lblCommentCount.text = String(commentList.count)
         tblComments.reloadData()
@@ -89,6 +92,12 @@ class PostViewController: UIViewController, UITableViewDataSource {
     
     @IBAction func onDeleteBtnPressed(_ sender: Any) {
         do {
+            let topic = post!.topic
+            let author = post!.author
+            
+            topic!.removeFromPosts(post!)
+            post!.author = nil
+            
             try postRepo.delete(entity: post!)
         } catch {
             print("Failed to delete post: \(error)")

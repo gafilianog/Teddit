@@ -33,7 +33,7 @@ class CreateEditPostViewController: UIViewController, UITextViewDelegate {
         lblPageTitle.text = pageTitle
         
         if currentPost != nil {
-            lblFakePlaceholder.isHidden = true
+            lblFakePlaceholder.isHidden = !currentPost!.content!.isEmpty
             btnPost.isEnabled = true
             btnPost.setTitle(btnTitle, for: .normal)
             btnPost.setTitle(btnTitle, for: .disabled)
