@@ -29,6 +29,7 @@ class PostViewController: UIViewController, UITableViewDataSource {
     
     var post: Post?
     var commentList = [Comment]()
+    let postRepo = PostRepository()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -81,12 +82,18 @@ class PostViewController: UIViewController, UITableViewDataSource {
     }
     
     @IBAction func onEditBtnPressed(_ sender: Any) {
+        self.performSegue(withIdentifier: "toEditPost", sender: self)
     }
     
     
     @IBAction func onDeleteBtnPressed(_ sender: Any) {
-    
-        // TODO: Delete post here then back to Topic Page; unwind identifier: "postDeleted"
+        do {
+            try postRepo.delete(entity: post!)
+        } catch {
+            print("Failed to delete post: \(error)")
+        }
+        
+        self.performSegue(withIdentifier: "postDeleted", sender: self)
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -98,8 +105,6 @@ class PostViewController: UIViewController, UITableViewDataSource {
             dest.pageTitle = "Edit your post"
             dest.currentPost = post
             dest.btnTitle = "Edit"
-            
-            performSegue(withIdentifier: "toEditPost", sender: self)
         }
     }
     
