@@ -18,9 +18,12 @@ class CreateEditPostViewController: UIViewController, UITextViewDelegate {
     var topic: Topic?
     let postRepo = PostRepository()
     var pageTitle = ""
-    var postTitle = ""
-    var postContent = ""
     var btnTitle = ""
+    
+    /**
+     `Post` instance shouldn't be `nil` when use for editing the post.
+     */
+    var currentPost: Post?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,9 +31,12 @@ class CreateEditPostViewController: UIViewController, UITextViewDelegate {
         tvPostContent.delegate = self
         
         lblPageTitle.text = pageTitle
-        tfPostTitle.text = postTitle
-        tvPostContent.text = postContent
         btnPost.titleLabel!.text = btnTitle
+        
+        if currentPost != nil {
+            tfPostTitle.text = currentPost!.title
+            tvPostContent.text = currentPost!.content
+        }
     }
     
     func textViewDidChange(_ textView: UITextView) {
@@ -42,10 +48,6 @@ class CreateEditPostViewController: UIViewController, UITextViewDelegate {
     }
     
     @IBAction func onPostEditBtnPressed(_ sender: Any) {
-        
-        // TODO: After edit back to PostViewController; unwind identifier: "afterEdit:
-        
-        
         let alertTitle = "Validation Error"
         
         let title = tfPostTitle.text!
@@ -54,6 +56,21 @@ class CreateEditPostViewController: UIViewController, UITextViewDelegate {
         
         if title.isEmpty {
             return self.showAlert(title: alertTitle, message: "Post title cannot be empty.")
+        }
+        
+        if currentPost != nil {
+            currentPost!.title = title
+            currentPost!.content = content
+            
+            do {
+                try postRepo.save(entity: currentPost!)
+            } catch {
+                print("Failed to update post: \(error)")
+            }
+            
+            self.performSegue(withIdentifier: "afterEdit", sender: self)
+            
+            return
         }
         
         let post = postRepo.create()
@@ -67,7 +84,7 @@ class CreateEditPostViewController: UIViewController, UITextViewDelegate {
             
             self.showAlert(title: "Post", message: "Successfully created a new post", onOkHandler: { self.performSegue(withIdentifier: "toForum", sender: self) })
         } catch {
-            print("Failed to register user: \(error)")
+            print("Failed to register post: \(error)")
         }
     }
     
