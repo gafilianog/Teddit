@@ -95,10 +95,12 @@ class PostViewController: UIViewController, UITableViewDataSource {
             dest.post = post
         } else if segue.identifier == "toEditPost" {
             let dest = segue.destination as! CreateEditPostViewController
-            dest.lblPageTitle.text = "Edit your post"
-            dest.tfPostTitle.text = post!.title
-            dest.tvPostContent.text = post!.content
-            dest.btnPost.titleLabel!.text = "Edit"
+            dest.pageTitle = "Edit your post"
+            dest.postTitle = post!.title!
+            dest.postContent = post!.content!
+            dest.btnTitle = "Edit"
+            
+            performSegue(withIdentifier: "toEditPost", sender: self)
         }
     }
     

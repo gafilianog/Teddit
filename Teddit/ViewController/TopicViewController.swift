@@ -109,7 +109,8 @@ class TopicViewController: UIViewController, UITableViewDelegate, UITableViewDat
         case "toCreatePost":
             let dest = segue.destination as! CreateEditPostViewController
             dest.topic = topic!
-            dest.lblPageTitle.text = "Create a post"
+            dest.pageTitle = "Create a post"
+            dest.btnTitle = "Post"
             
             break
         case "toPost":

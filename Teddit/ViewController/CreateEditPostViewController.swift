@@ -17,11 +17,20 @@ class CreateEditPostViewController: UIViewController, UITextViewDelegate {
 
     var topic: Topic?
     let postRepo = PostRepository()
+    var pageTitle = ""
+    var postTitle = ""
+    var postContent = ""
+    var btnTitle = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         tvPostContent.delegate = self
+        
+        lblPageTitle.text = pageTitle
+        tfPostTitle.text = postTitle
+        tvPostContent.text = postContent
+        btnPost.titleLabel!.text = btnTitle
     }
     
     func textViewDidChange(_ textView: UITextView) {
