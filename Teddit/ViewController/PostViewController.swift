@@ -16,13 +16,8 @@ class PostViewController: UIViewController, UITableViewDataSource {
     @IBOutlet var lblPostTitle: UILabel!
     @IBOutlet var lblPostContent: UILabel!
     @IBOutlet var lblCommentCount: UILabel!
-    
-    
     @IBOutlet var btnEdit: UIButton!
-    
     @IBOutlet var btnDelete: UIButton!
-    
-    
     @IBOutlet var tblComments: UITableView!
     @IBOutlet var btnAddComment: UIButton!
     @IBOutlet var vFooterContainer: UIView!
@@ -56,6 +51,12 @@ class PostViewController: UIViewController, UITableViewDataSource {
         vFooterContainer.layer.shadowOffset = CGSize(width: 1.0, height: 1.0)
         vFooterContainer.layer.shadowOpacity = 0.1
         vFooterContainer.layer.cornerRadius = 20
+        
+        let currentUser = AuthUtils.getActualUser()!
+        let isAuthor = (currentUser == post!.author)
+        
+        btnEdit.isHidden = isAuthor
+        btnDelete.isHidden = isAuthor
         
         self.refreshPost()
     }
