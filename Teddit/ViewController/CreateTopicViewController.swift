@@ -9,9 +9,9 @@ import UIKit
 
 class CreateTopicViewController: UIViewController, UITextViewDelegate {
     
-    @IBOutlet weak var DescTxt: UITextField!
-    @IBOutlet weak var NameTxt: UITextField!
-    @IBOutlet weak var CreateTopicButton: UIButton!
+    @IBOutlet var tfTopicDesc: UITextField!
+    @IBOutlet var tfTopicName: UITextField!
+    @IBOutlet var btnCreateTopic: UIButton!
 
     var nameIsEmpty = true
     var descIsEmpty = true
@@ -23,20 +23,19 @@ class CreateTopicViewController: UIViewController, UITextViewDelegate {
         topicRepo = TopicRepository()
     }
     
-    @IBAction func NameChanged(_ sender: Any) {
-        nameIsEmpty = NameTxt.text!.isEmpty
-        CreateTopicButton.isEnabled = !nameIsEmpty && !descIsEmpty
+    @IBAction func onTopicNameFieldChanged(_ sender: Any) {
+        nameIsEmpty = tfTopicName.text!.isEmpty
+        btnCreateTopic.isEnabled = !nameIsEmpty && !descIsEmpty
     }
     
-    @IBAction func DescChanged(_ sender: Any) {
-        descIsEmpty = DescTxt.text!.isEmpty
-        CreateTopicButton.isEnabled = !nameIsEmpty && !descIsEmpty
+    @IBAction func onTopicDescFieldChanged(_ sender: Any) {
+        descIsEmpty = tfTopicDesc.text!.isEmpty
+        btnCreateTopic.isEnabled = !nameIsEmpty && !descIsEmpty
     }
     
-    @IBAction func CreateTopicPressed(_ sender: Any) {
-        let nameTxt: String = NameTxt.text!
-        let descTxt: String = DescTxt.text!
-        //nantinya gambar topic bisa di upload juga
+    @IBAction func onCreateTopicBtnPressed(_ sender: Any) {
+        let nameTxt: String = tfTopicName.text!
+        let descTxt: String = tfTopicDesc.text!
         
         let alertTitle = "Validation Error"
         for char in nameTxt {
@@ -71,14 +70,10 @@ class CreateTopicViewController: UIViewController, UITextViewDelegate {
             print("Failed to add new topic")
         }
         
-        NameTxt.text = ""
-        DescTxt.text = ""
-        CreateTopicButton.isEnabled = false
+        tfTopicName.text = ""
+        tfTopicDesc.text = ""
+        btnCreateTopic.isEnabled = false
         
         performSegue(withIdentifier: "toHome", sender: self)
-        
-//        let delegate = self.tabBarController as! ChangeTabDelegate
-//        delegate.changeTo(tabIndex: 0)
     }
-
 }

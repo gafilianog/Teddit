@@ -9,20 +9,26 @@ import UIKit
 
 class PostViewController: UIViewController, UITableViewDataSource {
     
+    @IBOutlet var vHeaderContainer: UIView!
+    @IBOutlet var imgTopicLogo: UIImageView!
+    @IBOutlet var lblTopicName: UILabel!
+    @IBOutlet var lblPostAuthor: UILabel!
+    @IBOutlet var lblPostTitle: UILabel!
+    @IBOutlet var lblPostContent: UILabel!
+    @IBOutlet var lblCommentCount: UILabel!
+    
+    
+    @IBOutlet var btnEdit: UIButton!
+    
+    @IBOutlet var btnDelete: UIButton!
+    
+    
+    @IBOutlet var tblComments: UITableView!
+    @IBOutlet var btnAddComment: UIButton!
+    @IBOutlet var vFooterContainer: UIView!
+    
     var post: Post?
     var commentList = [Comment]()
-    
-    @IBOutlet var vHeaderContainer: UIView!
-    @IBOutlet var imgSubLogo: UIImageView!
-    @IBOutlet var vFooterContainer: UIView!
-    @IBOutlet var btnAddComment: UIButton!
-    @IBOutlet var tblComments: UITableView!
-    
-    @IBOutlet var lblTitle: UILabel!
-    @IBOutlet var lblTopic: UILabel!
-    @IBOutlet var lblAuthor: UILabel!
-    @IBOutlet var lblContent: UILabel!
-    @IBOutlet var lblCommentCount: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,26 +37,24 @@ class PostViewController: UIViewController, UITableViewDataSource {
         
         tblComments.dataSource = self
         
-        imgSubLogo.image = UIImage(named: "\(post!.topic!.image!)")
-        
-        imgSubLogo.setRound()
-        
         vHeaderContainer.layer.shadowColor = UIColor.lightGray.cgColor
         vHeaderContainer.layer.shadowOffset = CGSize(width: 1.0, height: 1.0)
         vHeaderContainer.layer.shadowOpacity = 0.1
         vHeaderContainer.layer.cornerRadius = 20
         
+        imgTopicLogo.image = UIImage(named: "\(post!.topic!.image!)")
+        imgTopicLogo.setRound()
+        lblTopicName.text = "t/\(post!.topic!.name!)"
+        lblPostAuthor.text = "u/\(post!.author!.username!)"
+        lblPostTitle.text = post!.title
+        lblPostContent.text = post!.content
+        
+        btnAddComment.contentHorizontalAlignment = .leading
+        
         vFooterContainer.layer.shadowColor = UIColor.lightGray.cgColor
         vFooterContainer.layer.shadowOffset = CGSize(width: 1.0, height: 1.0)
         vFooterContainer.layer.shadowOpacity = 0.1
         vFooterContainer.layer.cornerRadius = 20
-        
-        btnAddComment.contentHorizontalAlignment = .leading
-        
-        lblTitle.text = post!.title
-        lblTopic.text = "t/\(post!.topic!.name!)"
-        lblAuthor.text = "u/\(post!.author!.username!)"
-        lblContent.text = post!.content
         
         self.refreshPost()
     }
@@ -76,27 +80,29 @@ class PostViewController: UIViewController, UITableViewDataSource {
         return commentCell
     }
     
+    @IBAction func onEditBtnPressed(_ sender: Any) {
+    }
+    
+    
+    @IBAction func onDeleteBtnPressed(_ sender: Any) {
+    
+        // TODO: Delete post here then back to Topic Page; unwind identifier: "postDeleted"
+    }
+
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "toCreateComment" {
             let dest = segue.destination as! CreateCommentViewController
             dest.post = post
+        } else if segue.identifier == "toEditPost" {
+            let dest = segue.destination as! CreateEditPostViewController
+            dest.lblPageTitle.text = "Edit your post"
+            dest.tfPostTitle.text = post!.title
+            dest.tvPostContent.text = post!.content
+            dest.btnPost.titleLabel!.text = "Edit"
         }
     }
-    
-//    override func viewDidAppear(_ animated: Bool) {
-//        <#code#>
-//    }
-    
-//    override func viewWillAppear(_ animated: Bool) {
-//        self.refreshPost()
-//    }
-    
-//    override func viewDidLayoutSubviews() {
-//        self.refreshPost()
-//    }
     
     @IBAction func unwindToPost(_ unwindSegue: UIStoryboardSegue) {
         self.refreshPost()
     }
-    
 }

@@ -7,10 +7,11 @@
 
 import UIKit
 
-class CreatePostViewController: UIViewController, UITextViewDelegate {
+class CreateEditPostViewController: UIViewController, UITextViewDelegate {
 
+    @IBOutlet var lblPageTitle: UILabel!
     @IBOutlet var tfPostTitle: UITextField!
-    @IBOutlet var tvPostBody: UITextView!
+    @IBOutlet var tvPostContent: UITextView!
     @IBOutlet var lblFakePlaceholder: UILabel!
     @IBOutlet var btnPost: UIButton!
 
@@ -19,34 +20,27 @@ class CreatePostViewController: UIViewController, UITextViewDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-//        tvPostBody.layer.cornerRadius = 6
-//        tvPostBody.layer.borderColor = UIColor.gray.withAlphaComponent(0.3).cgColor
-//        tvPostBody.layer.borderWidth = 0.5
-//        tvPostBody.textColor = .lightGray
-//        tvPostBody.text = "LOREM IPSUM"
         
-        tvPostBody.delegate = self
+        tvPostContent.delegate = self
     }
     
     func textViewDidChange(_ textView: UITextView) {
-        lblFakePlaceholder.isHidden = !tvPostBody.text.isEmpty
-//        if tvPostBody.textColor == .lightGray && tvPostBody.isFirstResponder {
-//            tvPostBody.text = nil
-//            tvPostBody.textColor = .black
-//        }
+        lblFakePlaceholder.isHidden = !tvPostContent.text.isEmpty
     }
     
-    // TODO: enable button when title not empty
     @IBAction func onTitleChange(_ sender: Any) {
         btnPost.isEnabled = tfPostTitle.hasText
     }
     
-    @IBAction func actPost(_ sender: Any) {
+    @IBAction func onPostEditBtnPressed(_ sender: Any) {
+        
+        // TODO: After edit back to PostViewController; unwind identifier: "afterEdit:
+        
+        
         let alertTitle = "Validation Error"
         
         let title = tfPostTitle.text!
-        let content = tvPostBody.text!
+        let content = tvPostContent.text!
         let author = AuthUtils.getActualUser()!
         
         if title.isEmpty {

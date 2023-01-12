@@ -11,7 +11,7 @@ class CreateCommentViewController: UIViewController, UITextViewDelegate {
     
     @IBOutlet var lblTitle: UILabel!
     @IBOutlet var lblFakePlaceholder: UILabel!
-    @IBOutlet var tvCommentSection: UITextView!
+    @IBOutlet var tvCommentContent: UITextView!
     @IBOutlet var btnComment: UIButton!
     
     var post: Post?
@@ -20,19 +20,20 @@ class CreateCommentViewController: UIViewController, UITextViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        tvCommentSection.delegate = self
+        tvCommentContent.delegate = self
+        
         lblTitle.text = post!.title!
     }
     
     func textViewDidChange(_ textView: UITextView) {
-        lblFakePlaceholder.isHidden = !tvCommentSection.text.isEmpty
-        btnComment.isEnabled = !tvCommentSection.text.isEmpty
+        lblFakePlaceholder.isHidden = !tvCommentContent.text.isEmpty
+        btnComment.isEnabled = !tvCommentContent.text.isEmpty
     }
     
-    @IBAction func actComment(_ sender: Any) {
+    @IBAction func onCommentBtnPressed(_ sender: Any) {
         let comment = commentRepo.create()
         
-        comment.content = tvCommentSection.text!
+        comment.content = tvCommentContent.text!
         comment.author = AuthUtils.getActualUser()
         
         post!.addToComments(comment)

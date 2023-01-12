@@ -9,9 +9,9 @@ import UIKit
 
 class RegisterViewController: UIViewController {
 
-    @IBOutlet var usernameField: UITextField!
-    @IBOutlet var emailField: UITextField!
-    @IBOutlet var passwordField: UITextField!
+    @IBOutlet var tfUsername: UITextField!
+    @IBOutlet var tfEmail: UITextField!
+    @IBOutlet var tfPassword: UITextField!
     
     var userRepo: UserRepository!
     
@@ -21,11 +21,11 @@ class RegisterViewController: UIViewController {
         userRepo = UserRepository()
     }
     
-    @IBAction func actToLogin(_ sender: Any) {
+    @IBAction func onGoToLoginBtnPressed(_ sender: Any) {
         performSegue(withIdentifier: "toLogin", sender: self)
     }
     
-    @IBAction func registerPressed(_ sender: Any) {
+    @IBAction func onRegisterBtnPressed(_ sender: Any) {
         let username, email, password: String
         
         do {
@@ -53,7 +53,7 @@ class RegisterViewController: UIViewController {
     }
     
     func validateUsername() throws -> String {
-        let username = usernameField.text!
+        let username = tfUsername.text!
         if username.isEmpty {
             throw ValidationError("Username cannot be empty.")
         }
@@ -87,7 +87,7 @@ class RegisterViewController: UIViewController {
     }
     
     func validateEmail() throws -> String {
-        let email = emailField.text!
+        let email = tfEmail.text!
         if email.isEmpty {
             throw ValidationError("Email cannot be empty.")
         }
@@ -134,7 +134,7 @@ class RegisterViewController: UIViewController {
     }
     
     func validatePassword() throws -> String {
-        let password = passwordField.text!
+        let password = tfPassword.text!
         
         if password.count < 8 || password.count > 16 {
             throw ValidationError("Password length must be 8 - 16 characters.")

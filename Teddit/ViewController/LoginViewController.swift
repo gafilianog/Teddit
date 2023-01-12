@@ -9,8 +9,8 @@ import UIKit
 
 class LoginViewController: UIViewController {
 
-    @IBOutlet var usernameField: UITextField!
-    @IBOutlet var passwordField: UITextField!
+    @IBOutlet var tfUsername: UITextField!
+    @IBOutlet var tfPassword: UITextField!
     
     var userRepo: UserRepository!
     
@@ -36,18 +36,17 @@ class LoginViewController: UIViewController {
         }
     }
     
-    @IBAction func unwindToLogin(_ unwindSegue: UIStoryboardSegue) {}
-    
-    @IBAction func loginPressed(_ sender: Any) {
+    @IBAction func onLoginBtnPressed(_ sender: Any) {
         let alertTitle = "Validation Error"
         
-        let username = usernameField.text!
-        let password = passwordField.text!
+        let username = tfUsername.text!
+        let password = tfPassword.text!
         
         if username.isEmpty {
             self.showAlert(title: alertTitle, message: "Username cannot be empty.")
             return
         }
+        
         if password.isEmpty {
             self.showAlert(title: alertTitle, message: "Password cannot be empty.")
             return
@@ -63,8 +62,8 @@ class LoginViewController: UIViewController {
                 
                 AuthUtils.storeUser(entity)
                 self.showAlert(title: "Success", message: "You have successfully logged in!", onOkHandler: {
-                    self.usernameField.text = ""
-                    self.passwordField.text = ""
+                    self.tfUsername.text = ""
+                    self.tfPassword.text = ""
                     
                     self.performSegue(withIdentifier: "toHome", sender: self)
                 })
@@ -77,5 +76,6 @@ class LoginViewController: UIViewController {
         }
     }
     
+    @IBAction func unwindToLogin(_ unwindSegue: UIStoryboardSegue) {}
 }
 
