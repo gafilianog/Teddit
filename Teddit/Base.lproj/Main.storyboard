@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
         <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -30,7 +30,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="CircleLogo" translatesAutoresizingMaskIntoConstraints="NO" id="bcO-a2-YKF">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="circle_logo" translatesAutoresizingMaskIntoConstraints="NO" id="bcO-a2-YKF">
                                 <rect key="frame" x="20" y="159" width="75" height="75"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="75" id="6f6-rv-DG4"/>
@@ -77,7 +77,7 @@
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" red="0.97254901960784312" green="0.97647058823529409" blue="0.98431372549019602" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ZyP-9E-H0D" secondAttribute="trailing" constant="20" id="2ZB-vT-bHl"/>
                             <constraint firstItem="3Q3-Bc-f7c" firstAttribute="top" secondItem="bcO-a2-YKF" secondAttribute="bottom" constant="20" id="7Fq-DH-xFL"/>
@@ -129,7 +129,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="CircleLogo" translatesAutoresizingMaskIntoConstraints="NO" id="9hM-Hw-o0M">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="circle_logo" translatesAutoresizingMaskIntoConstraints="NO" id="9hM-Hw-o0M">
                                 <rect key="frame" x="20" y="159" width="75" height="75"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="75" id="ISv-uM-2mj"/>
@@ -182,7 +182,7 @@
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="yGL-Yc-wUq"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" red="0.97254901960784312" green="0.97647058823529409" blue="0.98431372549019602" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="3dr-Xz-x3a" firstAttribute="bottom" secondItem="yGL-Yc-wUq" secondAttribute="bottom" id="0mb-Gz-Yth"/>
                             <constraint firstItem="yGL-Yc-wUq" firstAttribute="trailing" secondItem="uHJ-s5-As6" secondAttribute="trailing" constant="20" id="0zz-AC-Kbe"/>
@@ -256,7 +256,7 @@
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="X9k-em-ELN">
                                 <rect key="frame" x="0.0" y="149" width="393" height="669"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="backgroundColor" red="0.97254901959999995" green="0.97647058819999999" blue="0.98431372549999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="topicCell" rowHeight="83" id="e4f-aJ-5GR" customClass="TopicItemTableViewCell" customModule="Teddit" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="50" width="393" height="83"/>
@@ -265,8 +265,8 @@
                                             <rect key="frame" x="0.0" y="0.0" width="393" height="83"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CqO-Fl-Cxj">
-                                                    <rect key="frame" x="20" y="11" width="60" height="60"/>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="CqO-Fl-Cxj">
+                                                    <rect key="frame" x="20" y="11" width="60" height="61"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="60" id="NcN-Ez-XHu"/>
                                                         <constraint firstAttribute="height" constant="60" id="Wtn-Ek-wcC"/>
@@ -300,6 +300,7 @@
                                                 <constraint firstItem="iM2-6z-iFE" firstAttribute="leading" secondItem="CqO-Fl-Cxj" secondAttribute="trailing" constant="8" symbolic="YES" id="wwH-8z-Jws"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" red="0.97254901959999995" green="0.97647058819999999" blue="0.98431372549999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <inset key="separatorInset" minX="15" minY="0.0" maxX="15" maxY="0.0"/>
                                         <connections>
                                             <outlet property="imgTopicImage" destination="CqO-Fl-Cxj" id="Geb-WP-AiS"/>
@@ -311,12 +312,13 @@
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="8BS-cj-TpV"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" red="0.97254901959999995" green="0.97647058819999999" blue="0.98431372549999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="X9k-em-ELN" firstAttribute="leading" secondItem="8BS-cj-TpV" secondAttribute="leading" id="7HI-Aa-MnS"/>
                             <constraint firstItem="8BS-cj-TpV" firstAttribute="bottom" secondItem="X9k-em-ELN" secondAttribute="bottom" id="7jc-zb-3a0"/>
                             <constraint firstItem="8BS-cj-TpV" firstAttribute="trailing" secondItem="g2t-af-mUc" secondAttribute="trailing" constant="20" id="Gdq-v4-q8A"/>
                             <constraint firstItem="8BS-cj-TpV" firstAttribute="trailing" secondItem="X9k-em-ELN" secondAttribute="trailing" id="OGb-nl-CkN"/>
+                            <constraint firstItem="g2t-af-mUc" firstAttribute="leading" relation="lessThanOrEqual" secondItem="oj2-QK-cbJ" secondAttribute="trailing" constant="203" id="RiX-Tg-KBP"/>
                             <constraint firstItem="X9k-em-ELN" firstAttribute="top" secondItem="oj2-QK-cbJ" secondAttribute="bottom" constant="10" id="ZFd-Jf-IKb"/>
                             <constraint firstItem="oj2-QK-cbJ" firstAttribute="leading" secondItem="8BS-cj-TpV" secondAttribute="leading" constant="20" id="pz7-6I-91k"/>
                             <constraint firstItem="oj2-QK-cbJ" firstAttribute="top" secondItem="8BS-cj-TpV" secondAttribute="top" id="qNg-YS-eSB"/>
@@ -386,7 +388,7 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="bubble.left" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="Psb-v4-r3N">
-                                                            <rect key="frame" x="315" y="57.333333333333336" width="15" height="13.000000000000007"/>
+                                                            <rect key="frame" x="315" y="57.333333333333336" width="15" height="13"/>
                                                             <color key="tintColor" systemColor="labelColor"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="15" id="P20-Bg-Bat"/>
@@ -583,16 +585,10 @@
                                             <constraint firstAttribute="height" constant="14" id="Le9-0n-sdk"/>
                                         </constraints>
                                         <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain">
-                                            <imageReference key="image" image="pencil" catalog="system" symbolScale="small"/>
-                                            <attributedString key="attributedTitle">
-                                                <fragment content="Edit">
-                                                    <attributes>
-                                                        <font key="NSFont" size="10" name="Helvetica"/>
-                                                        <font key="NSOriginalFont" size="12" name="Helvetica"/>
-                                                    </attributes>
-                                                </fragment>
-                                            </attributedString>
+                                        <buttonConfiguration key="configuration" style="plain" title="Edit">
+                                            <imageReference key="image" image="pencil" catalog="system"/>
+                                            <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" configurationType="pointSize" pointSize="14" scale="small"/>
+                                            <fontDescription key="titleFontDescription" type="system" weight="semibold" pointSize="10"/>
                                             <directionalEdgeInsets key="contentInsets" top="0.0" leading="0.0" bottom="0.0" trailing="0.0"/>
                                             <color key="baseForegroundColor" systemColor="labelColor"/>
                                         </buttonConfiguration>
@@ -601,21 +597,15 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JY8-h6-JVj">
-                                        <rect key="frame" x="330" y="235" width="43" height="14"/>
+                                        <rect key="frame" x="328.66666666666669" y="235" width="44.333333333333314" height="14"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="14" id="pUq-C3-0mg"/>
                                         </constraints>
                                         <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain">
-                                            <imageReference key="image" image="xmark" catalog="system" symbolScale="small"/>
-                                            <attributedString key="attributedTitle">
-                                                <fragment content="Delete">
-                                                    <attributes>
-                                                        <font key="NSFont" size="10" name="Helvetica"/>
-                                                        <font key="NSOriginalFont" size="12" name="Helvetica"/>
-                                                    </attributes>
-                                                </fragment>
-                                            </attributedString>
+                                        <buttonConfiguration key="configuration" style="plain" title="Delete">
+                                            <imageReference key="image" image="xmark" catalog="system"/>
+                                            <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" configurationType="pointSize" pointSize="14" scale="small"/>
+                                            <fontDescription key="titleFontDescription" type="system" weight="semibold" pointSize="10"/>
                                             <directionalEdgeInsets key="contentInsets" top="0.0" leading="0.0" bottom="0.0" trailing="0.0"/>
                                             <color key="baseForegroundColor" systemColor="systemRedColor"/>
                                         </buttonConfiguration>
@@ -931,7 +921,7 @@
                             </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="HaH-y3-iLz"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" red="0.97254901960784312" green="0.97647058823529409" blue="0.98431372549019602" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="8IU-md-TU9" firstAttribute="top" secondItem="HaH-y3-iLz" secondAttribute="top" constant="20" id="G0d-DI-6lp"/>
                             <constraint firstItem="TOo-ph-wcQ" firstAttribute="leading" secondItem="HaH-y3-iLz" secondAttribute="leading" constant="25" id="SQs-84-YZG"/>
@@ -1027,7 +1017,7 @@
                             </textField>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="NbO-qs-d8l"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" red="0.97254901959999995" green="0.97647058819999999" blue="0.98431372549999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="NbO-qs-d8l" firstAttribute="trailing" secondItem="Ct1-YV-MxV" secondAttribute="trailing" constant="20" id="3fo-0A-jtG"/>
                             <constraint firstItem="Ct1-YV-MxV" firstAttribute="leading" secondItem="NbO-qs-d8l" secondAttribute="leading" constant="20" id="6Uy-3X-luo"/>
@@ -1083,14 +1073,14 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="7ff-gE-arh"/>
+        <segue reference="jR6-qe-Vbf"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" name="AccentColor"/>
     <resources>
-        <image name="CircleLogo" width="166.66667175292969" height="166.66667175292969"/>
         <image name="book.closed" catalog="system" width="115" height="128"/>
         <image name="bubble.left" catalog="system" width="128" height="110"/>
-        <image name="default_sub_logo" width="20" height="20"/>
+        <image name="circle_logo" width="75" height="75"/>
+        <image name="default_sub_logo" width="60" height="60"/>
         <image name="pencil" catalog="system" width="128" height="113"/>
         <image name="plus" catalog="system" width="128" height="113"/>
         <image name="rectangle.portrait.and.arrow.forward" catalog="system" width="128" height="109"/>

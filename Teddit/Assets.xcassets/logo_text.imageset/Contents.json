@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "CircleLogo.png",
+      "filename" : "LogoText.svg",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "CircleLogo 1.png",
+      "filename" : "LogoText 1.svg",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "CircleLogo 2.png",
+      "filename" : "LogoText 2.svg",
       "idiom" : "universal",
       "scale" : "3x"
     }

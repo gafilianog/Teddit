@@ -93,7 +93,6 @@ class PostViewController: UIViewController, UITableViewDataSource {
     @IBAction func onDeleteBtnPressed(_ sender: Any) {
         do {
             let topic = post!.topic
-            let author = post!.author
             
             topic!.removeFromPosts(post!)
             post!.author = nil
